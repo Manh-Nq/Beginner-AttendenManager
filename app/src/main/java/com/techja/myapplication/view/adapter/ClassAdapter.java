@@ -16,12 +16,12 @@ import com.techja.myapplication.model.ClassEntity;
 import java.util.List;
 
 public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder> {
-    private Context context;
     private List<ClassEntity> listData;
+    private Context context;
 
-    public ClassAdapter(Context context, List<ClassEntity> listData) {
-        this.context = context;
+    public ClassAdapter(List<ClassEntity> listData, Context context) {
         this.listData = listData;
+        this.context = context;
     }
 
     @NonNull
@@ -36,10 +36,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         ClassEntity entity = listData.get(position);
         holder.tvClassName.setText(entity.getClassName());
         holder.tvClassCode.setText(entity.getClassCode());
-        holder.tvClassName.setTag(entity);
-        holder.btInfo.setTag(entity);
-        holder.btTimetable.setTag(entity);
-        holder.btLishs.setTag(entity);
+        holder.tvClassCode.setTag(entity);
+
     }
 
     @Override
@@ -47,9 +45,9 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         return listData.size();
     }
 
-    public class ClassHolder extends RecyclerView.ViewHolder {
+    public class ClassHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvClassName, tvClassCode;
-        Button btInfo, btTimetable, btLishs;
+        Button btInfo, btTimetable, btListHS;
 
         public ClassHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,33 +55,40 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
             tvClassName = itemView.findViewById(R.id.tv_name_class_m004);
             btInfo = itemView.findViewById(R.id.bt_info_dialog);
             btTimetable = itemView.findViewById(R.id.bt_timetable_dialog);
-            btLishs = itemView.findViewById(R.id.bt_lisths_dialog);
-
-            itemView.findViewById(R.id.tb_item_class).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ClassEntity entity = (ClassEntity) v.getTag();
-                    callBack.clickButtonInfo(entity);
-                }
-            });
+            btListHS = itemView.findViewById(R.id.bt_lisths_dialog);
+            btInfo.setOnClickListener(this);
+            btListHS.setOnClickListener(this);
+            btTimetable.setOnClickListener(this);
 
         }
 
 
+        @Override
+        public void onClick(View v) {
+            ClassEntity entity = (ClassEntity) tvClassCode.getTag();
+            if (v.getId() == R.id.bt_info_dialog) {
+                callBack.clickButtonInfo(entity);
+            } else if (v.getId() == R.id.bt_timetable_dialog) {
+                callBack.clickButtonTimetable(entity);
+            } else if (v.getId() == R.id.bt_lisths_dialog) {
+                callBack.clickButtonListHS(entity);
+            }
+        }
     }
 
-    private OnItemClassClickListener callBack;
+    private adapterListener callBack;
 
-    public void setOnClickItemClassListener(OnItemClassClickListener event) {
+    public void setCallBackItem(adapterListener event) {
         callBack = event;
     }
 
-    public interface OnItemClassClickListener {
+    public interface adapterListener {
+
         void clickButtonInfo(ClassEntity data);
 
-        void clickButtonTimeTable(ClassEntity data);
+        void clickButtonTimetable(ClassEntity data);
 
-        void clickButtonlistHS(ClassEntity data);
+        void clickButtonListHS(ClassEntity data);
 
     }
 }

@@ -34,4 +34,12 @@ public class ClassEntity {
         }
         return super.equals(obj);
     }
+
+    @Override
+    public String toString() {
+        return "ClassEntity{" +
+                "className='" + className + '\'' +
+                ", classCode='" + classCode + '\'' +
+                '}';
+    }
 }

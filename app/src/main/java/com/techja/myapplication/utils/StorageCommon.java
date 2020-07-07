@@ -2,6 +2,7 @@ package com.techja.myapplication.utils;
 
 
 import com.techja.myapplication.model.ClassEntity;
+import com.techja.myapplication.model.TimeTableEntity;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,8 @@ public class StorageCommon {
         listClass = new ArrayList<>();
 
     }
+
+
 
     public String getCurrentUId() {
         return currentUId;

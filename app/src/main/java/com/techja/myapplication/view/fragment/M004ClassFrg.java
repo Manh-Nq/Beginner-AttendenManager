@@ -20,7 +20,7 @@ import com.techja.myapplication.view.event.OnM004ClassCallBack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCallBack> implements OnM004ClassCallbackToView, ClassAdapter.OnItemClassClickListener {
+public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCallBack> implements OnM004ClassCallbackToView, ClassAdapter.adapterListener {
     public static final String TAG = M004ClassFrg.class.getName();
     private RecyclerView rvClass;
     private ClassAdapter adapter;
@@ -43,7 +43,6 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         btEdit = findViewById(R.id.bt_more_m004, this);
         mPresenter.getListClass();
         rvClass = rootView.findViewById(R.id.rv_class);
-        rvClass.removeAllViews();
         initData();
         rvClass.setAdapter(adapter);
         rvClass.setLayoutManager(new LinearLayoutManager(mContext));
@@ -54,8 +53,8 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         listData = new ArrayList<>();
         listData = getStorage().getListClass();
         Log.d(TAG, "initViews: " + listData.size());
-        adapter = new ClassAdapter(mContext, listData);
-        adapter.setOnClickItemClassListener(this);
+        adapter = new ClassAdapter(listData, mContext);
+        adapter.setCallBackItem(this);
     }
 
     @Override
@@ -75,24 +74,22 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         mCallBack.showFragment(M003MenuFrg.TAG);
     }
 
-    @Override
-    public void hideProgressLoadDataBar() {
-
-    }
 
     @Override
     public void clickButtonInfo(ClassEntity data) {
+        Toast.makeText(mContext, "this is button info", Toast.LENGTH_SHORT).show();
 
-        Toast.makeText(mContext, data.getClassCode(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void clickButtonTimeTable(ClassEntity data) {
-        Toast.makeText(mContext, data.getClassName(), Toast.LENGTH_SHORT).show();
+    public void clickButtonTimetable(ClassEntity data) {
+        Toast.makeText(mContext, "this is button timetable", Toast.LENGTH_SHORT).show();
+        getStorage().setClassCode(data.getClassCode());
+        mCallBack.showFragment(M005TimeTableFrg.TAG);
     }
 
     @Override
-    public void clickButtonlistHS(ClassEntity data) {
-        Toast.makeText(mContext,"this is list hs", Toast.LENGTH_SHORT).show();
+    public void clickButtonListHS(ClassEntity data) {
+        Toast.makeText(mContext, "this is button lisHS", Toast.LENGTH_SHORT).show();
     }
 }

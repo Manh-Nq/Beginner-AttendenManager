@@ -118,7 +118,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/ln_history"
+                android:id="@+id/ln_time_table"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/d_16"
@@ -131,13 +131,14 @@
         </ScrollView>
 
         <Button
+            android:id="@+id/bt_edit_table"
             android:layout_width="100dp"
             android:layout_height="@dimen/d_50"
             android:layout_gravity="right"
+            android:layout_marginTop="@dimen/d_10"
             android:layout_marginRight="@dimen/d_16"
             android:background="@drawable/bg_edit_bt"
-            android:layout_marginTop="@dimen/d_10"
-            android:text="Info" />
+            android:text="Edit table" />
 
     </LinearLayout>
 </RelativeLayout>
