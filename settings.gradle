@@ -1,0 +1,2 @@
+rootProject.name='APPQUANLY'
+include ':app'
