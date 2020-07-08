@@ -47,17 +47,13 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
 
     public class ClassHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvClassName, tvClassCode;
-        Button btInfo, btTimetable, btListHS;
+        Button btTimetable;
 
         public ClassHolder(@NonNull View itemView) {
             super(itemView);
             tvClassCode = itemView.findViewById(R.id.tv_class_code_m004);
             tvClassName = itemView.findViewById(R.id.tv_name_class_m004);
-            btInfo = itemView.findViewById(R.id.bt_info_dialog);
             btTimetable = itemView.findViewById(R.id.bt_timetable_dialog);
-            btListHS = itemView.findViewById(R.id.bt_lisths_dialog);
-            btInfo.setOnClickListener(this);
-            btListHS.setOnClickListener(this);
             btTimetable.setOnClickListener(this);
 
         }
@@ -66,12 +62,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         @Override
         public void onClick(View v) {
             ClassEntity entity = (ClassEntity) tvClassCode.getTag();
-            if (v.getId() == R.id.bt_info_dialog) {
-                callBack.clickButtonInfo(entity);
-            } else if (v.getId() == R.id.bt_timetable_dialog) {
+            if (v.getId() == R.id.bt_timetable_dialog) {
                 callBack.clickButtonTimetable(entity);
-            } else if (v.getId() == R.id.bt_lisths_dialog) {
-                callBack.clickButtonListHS(entity);
             }
         }
     }
@@ -84,11 +76,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
 
     public interface adapterListener {
 
-        void clickButtonInfo(ClassEntity data);
 
         void clickButtonTimetable(ClassEntity data);
-
-        void clickButtonListHS(ClassEntity data);
 
     }
 }

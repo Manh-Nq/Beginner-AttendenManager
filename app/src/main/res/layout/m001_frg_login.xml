@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorLightGray">
+    android:background="@color/colorWhiteAlpha">
 
     <include layout="@layout/m001_actionbar" />
 
@@ -118,8 +118,9 @@
                 android:layout_marginTop="@dimen/d40"
                 android:background="@drawable/bg_green_bt"
                 android:text="Login"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/d_14" />
+                android:textColor="@color/colorWhiteAlpha"
+                android:textSize="@dimen/d_20"
+                android:fontFamily="sans-serif-condensed"/>
 
             <TextView
                 android:id="@+id/tv_register"

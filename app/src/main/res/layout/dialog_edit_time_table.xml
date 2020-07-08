@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:hint="định dạng Monday->"
+            android:hint="định dạng Monday->Mon"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 

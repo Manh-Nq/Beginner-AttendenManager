@@ -20,12 +20,8 @@ public class M005EditTimeTablePresenter extends BasePresenter<OnM005EditTimeTabl
 
             TimeTableEntity entity = new TimeTableEntity(day, time, detail, coach, note);
 
-            if (!doc.set(entity).isSuccessful()) {
-
-                mListener.showToast("upload time table fail");
-                return;
-            }
             doc.set(entity);
+            mListener.showToast("upload time table success fully");
 
         } catch (Exception e) {
             e.printStackTrace();

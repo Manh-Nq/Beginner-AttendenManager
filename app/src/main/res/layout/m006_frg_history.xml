@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical">
+    <include layout="@layout/actionbar_m006"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,10 +20,10 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_marginTop="@dimen/d_20"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginTop="@dimen/d_20"
         android:layout_marginRight="@dimen/d_16"
         android:orientation="horizontal"
         android:weightSum="2">
@@ -65,21 +66,12 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_class"
+                android:id="@+id/rv_class_006"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:listitem="@layout/item_class" />
+                tools:listitem="@layout/item_m006_list_class" />
 
-            <Button
-                android:id="@+id/bt_more_m004"
-                android:layout_width="100dp"
-                android:layout_height="@dimen/d_50"
-                android:layout_gravity="right"
-                android:layout_marginTop="@dimen/d_10"
-                android:background="@drawable/bg_edit_bt"
-                android:text="More"
-                android:textColor="@color/colorBlack" />
         </LinearLayout>
 
     </ScrollView>

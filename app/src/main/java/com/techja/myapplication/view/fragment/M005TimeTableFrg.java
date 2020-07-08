@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
 import com.techja.myapplication.presenter.M005TimeTablePresenter;
-import com.techja.myapplication.utils.MTask;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M005DialogEditTimeTable;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
@@ -19,7 +18,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
     private LinearLayout lnTimetable;
     private Button btEditTable;
     private String classCode;
-
+    private TextView tvClassName;
 
 
     @Override
@@ -34,11 +33,14 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
 
     @Override
     protected void initViews() {
-        this.classCode = getStorage().getClassCode();
+
+        this.classCode = getStorage().getClassEntity().getClassCode();
         mPresenter.getClassTimetable(this.classCode);
         lnTimetable = findViewById(R.id.ln_time_table);
         lnTimetable.removeAllViews();
         btEditTable = findViewById(R.id.bt_edit_table, this);
+        tvClassName = findViewById(R.id.tv_class_name_005);
+        tvClassName.setText(getStorage().getClassEntity().getClassName());
     }
 
     @Override
@@ -51,7 +53,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
     public void onClick(View v) {
         if (v.getId() == R.id.bt_edit_table) {
             getStorage().setClassCode(this.classCode);
-            M005DialogEditTimeTable dialog = new M005DialogEditTimeTable(mContext,classCode);
+            M005DialogEditTimeTable dialog = new M005DialogEditTimeTable(mContext, classCode);
             dialog.show();
         }
     }

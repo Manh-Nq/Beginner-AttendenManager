@@ -76,20 +76,9 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
 
 
     @Override
-    public void clickButtonInfo(ClassEntity data) {
-        Toast.makeText(mContext, "this is button info", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
     public void clickButtonTimetable(ClassEntity data) {
-        Toast.makeText(mContext, "this is button timetable", Toast.LENGTH_SHORT).show();
-        getStorage().setClassCode(data.getClassCode());
+        getStorage().setClassEntity(data);
         mCallBack.showFragment(M005TimeTableFrg.TAG);
     }
 
-    @Override
-    public void clickButtonListHS(ClassEntity data) {
-        Toast.makeText(mContext, "this is button lisHS", Toast.LENGTH_SHORT).show();
-    }
 }

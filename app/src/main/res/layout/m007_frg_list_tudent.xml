@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/d_16"
+        android:background="@color/colorGreen"
+        android:gravity="center"
+        android:text="Danh sách học viên"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/d_30"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_marginTop="@dimen/d_10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginRight="@dimen/d_16"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_class_007"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_m007_list_hs" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

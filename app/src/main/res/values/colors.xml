@@ -5,15 +5,15 @@
     <color name="colorAccent">#4E4E4E</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorGreen">#47D987</color>
-    <color name="colorGray">#DFDEDE</color>
+    <color name="colorGreen">#6FCDE9</color>
+    <color name="colorGray">#BAECED</color>
     <color name="colorRed">#F44336</color>
     <color name="colorRedAlpha">#F0564B</color>
-    <color name="colorWhiteAlpha">#EDEDED</color>
+    <color name="colorWhiteAlpha">#FFFDFB</color>
     <color name="colorLightGray">#E9E9F0</color>
     <color name="colorLightGreen">#1BFFAF</color>
-    <color name="colorDarkGray">#4E4E4E</color>
+    <color name="colorDarkGray">#33ABCE</color>
     <color name="colorDarkGreen">#386F24</color>
-    <color name="colorblue">#0463AF</color>
+    <color name="colorblue">#241F21</color>
     <color name="colorGreenAlpha">#0047D987</color>
 </resources>

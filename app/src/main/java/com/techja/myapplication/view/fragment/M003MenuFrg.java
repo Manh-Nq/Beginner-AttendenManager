@@ -25,6 +25,7 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
     @Override
     protected void initViews() {
         findViewById(R.id.ln_diem_danh, this);
+        findViewById(R.id.ln_history, this);
 
     }
 
@@ -32,14 +33,13 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
     public void onClick(View v) {
         if (v.getId() == R.id.ln_diem_danh) {
             mCallBack.showFragment(M004ClassFrg.TAG);
+        } else if (v.getId() == R.id.ln_history) {
+            mCallBack.showFragment(M006ListClassFrg.TAG);
         }
     }
 
     @Override
     public void showPreviousFrg() {
         throw new NullPointerException();
-//            CommonUtils.getInstance().saveAccount("", "");
-//            FirebaseAuth.getInstance().signOut();
-//            mCallBack.showFragment(M001LoginFrg.TAG);
     }
 }

@@ -23,6 +23,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:padding="@dimen/d_16"
+                android:tint="@color/colorWhiteAlpha"
                 android:src="@drawable/ic_android_black_24dp" />
 
             <LinearLayout
@@ -70,7 +71,7 @@
                 android:layout_weight="1"
                 android:padding="@dimen/d_16"
                 android:src="@drawable/ic_account_circle_black_24dp"
-                android:tint="@color/colorWhite" />
+                android:tint="@color/colorWhiteAlpha" />
         </TableRow>
 
         <TableRow
