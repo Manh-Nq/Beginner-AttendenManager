@@ -21,6 +21,7 @@ public class CommonUtils {
     private static final String SAVE_USER_NAME_PASS = "SAVE_USER_NAME_PASS";
     private static final String KEY_EMAIL = "KEY_USER_NAME";
     private static final String KEY_PASSWORD = "KEY_PASSWORD";
+    private static final String KEY_ADMIN = "KEY_ADMIN";
 
 
     private static CommonUtils instance;
@@ -43,11 +44,13 @@ public class CommonUtils {
         return df.format(new Date());
     }
 
-    public void saveAccount(String email, String password) {
+    public void saveAccount(String email, String password,String codeAdmin) {
         SharedPreferences sharedPref = App.getInstance().getSharedPreferences(SAVE_USER_NAME_PASS, Context.MODE_PRIVATE);
         editor = sharedPref.edit();
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_PASSWORD, password);
+        editor.putString(KEY_ADMIN, codeAdmin);
+
         editor.apply();
         Log.d("TAG", "saveAccount: " + email + password);
     }
@@ -55,7 +58,8 @@ public class CommonUtils {
     public String[] getAccount() {
         SharedPreferences sharedPreferences = App.getInstance().getSharedPreferences(SAVE_USER_NAME_PASS, Context.MODE_PRIVATE);
         String[] arrData = new String[]{sharedPreferences.getString(KEY_EMAIL, null),
-                sharedPreferences.getString(KEY_PASSWORD, null)};
+                sharedPreferences.getString(KEY_PASSWORD, null),
+                sharedPreferences.getString(KEY_ADMIN, null)};
         return arrData;
     }
 

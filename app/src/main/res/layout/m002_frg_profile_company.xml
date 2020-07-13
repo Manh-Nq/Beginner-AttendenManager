@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/d_10"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="the best android training organization " />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginTop="@dimen/d_16"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_qr2" />
+
+        <TextView
+            android:id="@+id/tv_code_002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/d_20"
+            android:text="11111996"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_20" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorBlack" />
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="@dimen/d_16"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/d40"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_location"
+            android:tint="@color/colorRed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/d_20"
+                android:text="latitude"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_30" />
+
+            <TextView
+                android:id="@+id/tv_lat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/d_20"
+                android:text="21.013503"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_20" />
+
+        </LinearLayout>
+    </TableRow>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorBlack" />
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="@dimen/d_16"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/d40"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_location"
+            android:tint="@color/colorRed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/d_20"
+                android:text="longitude"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_30" />
+
+            <TextView
+                android:id="@+id/tv_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/d_20"
+                android:text="105.801932"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_20" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorBlack" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_50"
+        android:layout_marginLeft="@dimen/d_16"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/d40"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_size" />
+
+        <TextView
+            android:id="@+id/tv_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/d_20"
+            android:text="50m"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_30" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorBlack" />
+
+    <Button
+        android:id="@+id/bt_edit_002"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/d_50"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_16"
+        android:background="@drawable/bg_edit_bt"
+        android:text="edit"
+        android:textSize="@dimen/d_16" />
+
+</LinearLayout>

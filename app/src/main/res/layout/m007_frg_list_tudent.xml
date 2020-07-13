@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,11 +19,51 @@
         android:textStyle="bold" />
 
 
-    <ScrollView
+    <TableRow
         android:layout_marginTop="@dimen/d_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginRight="@dimen/d_16"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tv_class"
+            android:gravity="center"
+            android:text="Tên"
+            android:textColor="@color/colorWhiteAlpha"
+            android:textSize="@dimen/d_30" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tv_class"
+            android:gravity="center"
+            android:text="Lớp"
+            android:textColor="@color/colorWhiteAlpha"
+            android:textSize="@dimen/d_30" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tv_class"
+            android:gravity="center"
+            android:text="Mail"
+            android:textColor="@color/colorWhiteAlpha"
+            android:textSize="@dimen/d_30" />
+
+    </TableRow>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginTop="@dimen/d_10"
         android:layout_marginRight="@dimen/d_16"
         android:layout_marginBottom="16dp">
 

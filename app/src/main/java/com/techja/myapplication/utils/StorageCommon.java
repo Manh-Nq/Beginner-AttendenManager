@@ -14,6 +14,7 @@ public class StorageCommon {
     private ClassEntity classEntity;
     private ArrayList<ClassEntity> listClass;
     private ArrayList<StudentEntity> listStudent;
+    private StudentEntity studentEntity;
 
 
     public StorageCommon() {
@@ -21,6 +22,7 @@ public class StorageCommon {
         listStudent = new ArrayList<>();
 
     }
+
 
     public ClassEntity getClassEntity() {
         return classEntity;
@@ -50,8 +52,8 @@ public class StorageCommon {
         return listStudent;
     }
 
-    public void addStudent(String name, String className,String email) {
-        StudentEntity entity = new StudentEntity(name, className,email);
+    public void addStudent(String name, String className, String email) {
+        StudentEntity entity = new StudentEntity(name, className, email);
         if (listStudent.contains(entity)) {
             return;
         }
@@ -86,5 +88,11 @@ public class StorageCommon {
         return classCode;
     }
 
+    public StudentEntity getStudentEntity() {
+        return studentEntity;
+    }
 
+    public void setStudentEntity(StudentEntity studentEntity) {
+        this.studentEntity = studentEntity;
+    }
 }

@@ -37,6 +37,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
         holder.tvName.setText(entity.getName());
         holder.tvClassName.setText(entity.getClassName());
         holder.tvEmail.setText(entity.getEmail());
+        holder.tvEmail.setTag(entity);
     }
 
     @Override
@@ -52,6 +53,23 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
             tvName = itemView.findViewById(R.id.tv_name_hs_007);
             tvClassName = itemView.findViewById(R.id.tv_class_name_007);
             tvEmail = itemView.findViewById(R.id.tv_email_007);
+            itemView.findViewById(R.id.tb_item_student_007).setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            callBack.showHistoryAttendanceStudent((StudentEntity) tvEmail.getTag());
+                        }
+                    });
         }
+    }
+
+    private clickItemStudentListener callBack;
+
+    public void setClickItemStudentListener(clickItemStudentListener event) {
+        callBack = event;
+    }
+
+    public interface clickItemStudentListener {
+        void showHistoryAttendanceStudent(StudentEntity data);
     }
 }

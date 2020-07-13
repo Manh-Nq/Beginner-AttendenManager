@@ -6,7 +6,7 @@
     android:padding="1dp">
 
     <TextView
-        android:id="@+id/tv_day"
+        android:id="@+id/tv_day_008"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -22,7 +22,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
-        android:id="@+id/tv_time"
+        android:id="@+id/tv_time_008"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -38,7 +38,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
-        android:id="@+id/tv_state"
+        android:id="@+id/tv_state_008"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"

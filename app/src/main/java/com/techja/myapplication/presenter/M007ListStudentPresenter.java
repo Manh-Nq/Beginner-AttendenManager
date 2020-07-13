@@ -18,6 +18,7 @@ public class M007ListStudentPresenter extends BasePresenter<OnM007ListStudentCal
     }
 
     public void getUserInfoStudent() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         FirebaseFirestore.getInstance()
                 .collection("user")
@@ -30,7 +31,7 @@ public class M007ListStudentPresenter extends BasePresenter<OnM007ListStudentCal
                             task.getResult().size();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> data = document.getData();
-                                getStorage().addStudent( (String) (data.get("firstName")+" "+data.get("lastName")),(String) data.get("classCode"),(String)data.get("email"));
+                                getStorage().addStudent((String) (data.get("firstName") + " " + data.get("lastName")), (String) data.get("classCode"), (String) data.get("email"));
                             }
                         }
                     }

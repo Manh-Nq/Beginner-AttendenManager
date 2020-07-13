@@ -3,7 +3,6 @@ package com.techja.myapplication.view.fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM007ListStudentCallBackToView;
 import com.techja.myapplication.model.StudentEntity;
@@ -15,7 +14,7 @@ import com.techja.myapplication.view.event.OnM007ListStudentCallBack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, OnM007ListStudentCallBack> implements OnM007ListStudentCallBackToView {
+public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, OnM007ListStudentCallBack> implements OnM007ListStudentCallBackToView, StudentAdapter.clickItemStudentListener {
     public static final String TAG = M007ListStudentFrg.class.getName();
     private RecyclerView rvStudent;
     private StudentAdapter adapter;
@@ -29,6 +28,18 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     @Override
     protected int getLayoutId() {
         return R.layout.m007_frg_list_tudent;
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mPresenter.getUserInfoStudent();
+        List<StudentEntity> listTmp = getStorage().getListStudent();
+        initData(listTmp);
+        rvStudent.setAdapter(adapter);
+        rvStudent.setLayoutManager(new LinearLayoutManager(mContext));
+
     }
 
     @Override
@@ -56,6 +67,7 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
             }
         }
         adapter = new StudentAdapter(listData, mContext);
+        adapter.setClickItemStudentListener(this);
     }
 
     @Override
@@ -64,4 +76,10 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     }
 
 
+    @Override
+    public void showHistoryAttendanceStudent(StudentEntity data) {
+        getStorage().setStudentEntity(data);
+        showToast(data.getEmail());
+        mCallBack.showFragment(M008StudentAttendanceFrg.TAG);
+    }
 }

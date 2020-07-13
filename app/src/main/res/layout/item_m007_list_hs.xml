@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="70dp"
     android:orientation="vertical"
     android:background="@color/colorGreen"
     android:weightSum="3">
 
 
     <TableRow
-        android:id="@+id/tb_item_class"
+        android:id="@+id/tb_item_student_007"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/d_10"
         android:layout_weight="3"
         android:weightSum="3"
         android:background="@color/colorBlack"
@@ -20,15 +19,14 @@
 
         <TextView
             android:id="@+id/tv_name_hs_007"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/colorWhite"
             android:gravity="center"
             android:text="Ngô Mạnh "
-            android:textStyle="bold"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20" />
+            android:textSize="@dimen/d_16" />
 
         <View
             android:layout_width="0.1dp"
@@ -37,7 +35,6 @@
 
         <TextView
 
-            android:textStyle="bold"
             android:id="@+id/tv_class_name_007"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -46,7 +43,7 @@
             android:gravity="center"
             android:text="techja k2"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20" />
+            android:textSize="@dimen/d_16" />
 
         <View
             android:layout_width="0.1dp"
@@ -54,7 +51,6 @@
             android:background="@color/colorBlack" />
         <TextView
 
-            android:textStyle="bold"
             android:id="@+id/tv_email_007"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -63,7 +59,7 @@
             android:gravity="center"
             android:text="mail"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20" />
+            android:textSize="@dimen/d_16" />
 
         <View
             android:layout_width="0.1dp"
@@ -73,26 +69,5 @@
 
     </TableRow>
 
-    <TableRow
-        android:layout_marginTop="@dimen/d_20"
-        android:layout_marginBottom="@dimen/d_20"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
 
-        <Button
-            android:layout_marginRight="@dimen/d_16"
-            android:id="@+id/bt_list_006"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/d_10"
-            android:layout_weight="1"
-            android:background="@drawable/bg_bt_timetable"
-            android:text="lịch sử điểm danh"
-            android:textColor="@color/colorWhiteAlpha"
-            android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
-
-
-    </TableRow>
 </LinearLayout>
