@@ -49,6 +49,7 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.bt_edit_002) {
+
             M002ChangeCodeDialog dialog = new M002ChangeCodeDialog(mContext);
             dialog.show();
         }

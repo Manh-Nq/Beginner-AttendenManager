@@ -1,5 +1,8 @@
 package com.techja.myapplication.view.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnMainCallBackToView;
 import com.techja.myapplication.presenter.MainPresenter;
@@ -32,7 +35,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements OnMainC
 
     @Override
     protected void initViews() {
+        if(checkSelfPermission(Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED ||
+                checkSelfPermission(Manifest.permission.INTERNET)!= PackageManager.PERMISSION_GRANTED){
+            requestPermissions(new String[]{Manifest.permission.CALL_PHONE,Manifest.permission.INTERNET},REQUEST_CODE);
 
+        }
         showFragment(M000SplashFrg.TAG);
     }
 

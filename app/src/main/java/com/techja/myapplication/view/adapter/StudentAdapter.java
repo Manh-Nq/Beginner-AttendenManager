@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
         holder.tvName.setText(entity.getName());
         holder.tvClassName.setText(entity.getClassName());
         holder.tvEmail.setText(entity.getEmail());
+        holder.tvPhone.setText(entity.getPhone());
         holder.tvEmail.setTag(entity);
     }
 
@@ -45,21 +47,30 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
         return listData.size();
     }
 
-    public class StudentHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvClassName, tvEmail;
+    public class StudentHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView tvName, tvClassName, tvEmail, tvPhone;
+        LinearLayout lnPhone;
 
         public StudentHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name_hs_007);
             tvClassName = itemView.findViewById(R.id.tv_class_name_007);
             tvEmail = itemView.findViewById(R.id.tv_email_007);
-            itemView.findViewById(R.id.tb_item_student_007).setOnClickListener(
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            callBack.showHistoryAttendanceStudent((StudentEntity) tvEmail.getTag());
-                        }
-                    });
+            tvPhone = itemView.findViewById(R.id.tv_phone_007);
+            lnPhone = itemView.findViewById(R.id.ln_phone_007);
+            lnPhone.setOnClickListener(this);
+            tvName.setOnClickListener(this);
+            tvEmail.setOnClickListener(this);
+            tvClassName.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.tv_name_hs_007 || v.getId() == R.id.tv_email_007 || v.getId() == R.id.tv_class_name_007) {
+                callBack.showHistoryAttendanceStudent((StudentEntity) tvEmail.getTag());
+            } else if (v.getId() == R.id.ln_phone_007) {
+                callBack.callPhoneForStudent((StudentEntity) tvEmail.getTag());
+            }
         }
     }
 
@@ -71,5 +82,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
 
     public interface clickItemStudentListener {
         void showHistoryAttendanceStudent(StudentEntity data);
+
+        void callPhoneForStudent(StudentEntity entity);
     }
 }

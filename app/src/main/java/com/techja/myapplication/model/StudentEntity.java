@@ -5,11 +5,21 @@ import androidx.annotation.Nullable;
 public class StudentEntity {
     private String name, className;
     private String email;
+    private String phone;
 
-    public StudentEntity(String name, String className, String email) {
+    public StudentEntity(String name, String className, String email,String phone) {
         this.name = name;
         this.className = className;
         this.email = email;
+        this.phone=phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {
@@ -40,7 +50,8 @@ public class StudentEntity {
     public boolean equals(@Nullable Object obj) {
         if (obj instanceof StudentEntity) {
             StudentEntity item = (StudentEntity) obj;
-            return item.name.equals(name) && item.className.equals(className) && item.email.equals(email);
+            return item.name.equals(name) && item.className.equals(className)
+                    && item.email.equals(email) && item.phone.equals(phone);
         }
         return super.equals(obj);
     }

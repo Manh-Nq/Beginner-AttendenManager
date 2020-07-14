@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:weightSum="3"
+        android:weightSum="4"
         android:background="@color/colorBlack"
         android:orientation="vertical"
         android:padding="0.1dp">
@@ -66,6 +66,35 @@
             android:layout_height="match_parent"
             android:background="@color/colorBlack" />
 
+        <LinearLayout
+            android:id="@+id/ln_phone_007"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/tv_phone_007"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:text="phone"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_10" />
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:background="@color/colorWhiteAlpha"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_phone" />
+
+        </LinearLayout>
 
     </TableRow>
 

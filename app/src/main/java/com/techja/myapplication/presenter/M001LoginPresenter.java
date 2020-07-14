@@ -30,7 +30,7 @@ public class M001LoginPresenter extends BasePresenter<OnM001LoginCallbackToView>
         super(event);
         fAuth = FirebaseAuth.getInstance();
         loginListenner = new OnCompleteListener<AuthResult>() {
-            @Override
+                @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     mListener.showToast("Login successfully: " + fAuth.getCurrentUser().getUid());

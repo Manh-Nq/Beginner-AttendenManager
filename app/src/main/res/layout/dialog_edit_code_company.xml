@@ -121,7 +121,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:hint="new size"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16" />

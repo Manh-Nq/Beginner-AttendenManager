@@ -42,7 +42,6 @@ public class M002ChangeCodeDialog extends BaseDialog<M002ChangeCodePresenter, On
             dismiss();
         } else if (v.getId() == R.id.tv_ok_002) {
             saveNewCodeToServer();
-            dismiss();
         }
     }
 
@@ -52,7 +51,8 @@ public class M002ChangeCodeDialog extends BaseDialog<M002ChangeCodePresenter, On
                 longt = textOf(edtLong),
                 range = textOf(edtRange);
         if (checkValid(code, lat, longt, range)) {
-            mPresenter.sendToServer(code,lat,longt,range);
+            mPresenter.sendToServer(code, lat, longt, range);
+            dismiss();
         }
     }
 
@@ -78,6 +78,7 @@ public class M002ChangeCodeDialog extends BaseDialog<M002ChangeCodePresenter, On
             edtRange.requestFocus();
             return false;
         }
+
         return true;
     }
 

@@ -10,7 +10,7 @@ public class StorageCommon {
     private String currentUId;
     private String currentFrgTag;
     private String classCode;
-    private long numberCallPhone;
+    private String numberCallPhone;
     private ClassEntity classEntity;
     private ArrayList<ClassEntity> listClass;
     private ArrayList<StudentEntity> listStudent;
@@ -52,8 +52,8 @@ public class StorageCommon {
         return listStudent;
     }
 
-    public void addStudent(String name, String className, String email) {
-        StudentEntity entity = new StudentEntity(name, className, email);
+    public void addStudent(String name, String className, String email,String phone) {
+        StudentEntity entity = new StudentEntity(name, className, email,phone);
         if (listStudent.contains(entity)) {
             return;
         }
@@ -64,11 +64,11 @@ public class StorageCommon {
         this.currentUId = currentUId;
     }
 
-    public long getNumberCallPhone() {
+    public String getNumberCallPhone() {
         return numberCallPhone;
     }
 
-    public void setNumberCallPhone(long numberCallPhone) {
+    public void setNumberCallPhone(String numberCallPhone) {
         this.numberCallPhone = numberCallPhone;
     }
 
