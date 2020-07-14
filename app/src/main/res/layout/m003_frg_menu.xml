@@ -23,8 +23,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:padding="@dimen/d_16"
-                android:tint="@color/colorWhiteAlpha"
-                android:src="@drawable/ic_android_black_24dp" />
+                android:src="@drawable/ic_android_black_24dp"
+                android:tint="@color/colorWhiteAlpha" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -64,13 +64,13 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/iv_profile"
+                android:id="@+id/iv_signout"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:padding="@dimen/d_16"
-                android:src="@drawable/ic_account_circle_black_24dp"
+                android:src="@drawable/ic_power"
                 android:tint="@color/colorWhiteAlpha" />
         </TableRow>
 
@@ -190,9 +190,9 @@
     </LinearLayout>
 
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/progress_load_data"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM002ProfileCallBackToView;
+import com.techja.myapplication.model.CompanyEntity;
 import com.techja.myapplication.presenter.M002ProfileCompanyPresenter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M002ChangeCodeDialog;
@@ -49,7 +50,8 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.bt_edit_002) {
-
+            CompanyEntity entity = new CompanyEntity(code,lat,longt,range);
+            getStorage().setCompanyEntity(entity);
             M002ChangeCodeDialog dialog = new M002ChangeCodeDialog(mContext);
             dialog.show();
         }
@@ -60,6 +62,10 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
         if (listData.size() < 0) {
             return;
         }
+        this.code = listData.get(0);
+        this.lat = listData.get(1);
+        this.longt = listData.get(2);
+        this.range = listData.get(3);
         tvCode.setText(listData.get(0));
         tvLat.setText(listData.get(1));
         tvLong.setText(listData.get(2));

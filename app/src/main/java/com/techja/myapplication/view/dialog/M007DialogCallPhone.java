@@ -30,6 +30,8 @@ public class M007DialogCallPhone extends BaseDialog<M007DialogCallphonePresenter
 
     @Override
     protected void initViews() {
+        if (getStorage().getNumberCallPhone() == null || getStorage().getNumberCallPhone().equals(""))
+            return;
         this.phone = getStorage().getNumberCallPhone();
         findViewById(R.id.tv_cancel_call_phone_007, this);
         findViewById(R.id.tv_ok_call_phone_007, this);

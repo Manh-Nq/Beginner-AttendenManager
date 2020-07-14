@@ -6,9 +6,12 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM002ChangeCodeCallBackToView;
+import com.techja.myapplication.model.CompanyEntity;
 import com.techja.myapplication.presenter.M002ChangeCodePresenter;
+import com.techja.myapplication.utils.StorageCommon;
 import com.techja.myapplication.view.base.BaseDialog;
 import com.techja.myapplication.view.event.OnM002ChangeCodeCallBackToParent;
 
@@ -28,10 +31,16 @@ public class M002ChangeCodeDialog extends BaseDialog<M002ChangeCodePresenter, On
     protected void initViews() {
         findViewById(R.id.tv_cancel_002, this);
         findViewById(R.id.tv_ok_002, this);
+        CompanyEntity entity = getStorage().getCompanyEntity();
         edtCode = findViewById(R.id.edt_code_attendance_002);
         edtLat = findViewById(R.id.edt_latitude);
         edtLong = findViewById(R.id.edt_longitude);
         edtRange = findViewById(R.id.edt_range_002);
+
+        edtCode.setText(entity.getCodeDD());
+        edtLat.setText(entity.getLatitude());
+        edtLong.setText(entity.getLongitude());
+        edtRange.setText(entity.getMaxdistance());
 
 
     }
@@ -85,5 +94,9 @@ public class M002ChangeCodeDialog extends BaseDialog<M002ChangeCodePresenter, On
     @Override
     protected int getLayoutId() {
         return R.layout.dialog_edit_code_company;
+    }
+
+    public StorageCommon getStorage(){
+        return App.getStorage();
     }
 }

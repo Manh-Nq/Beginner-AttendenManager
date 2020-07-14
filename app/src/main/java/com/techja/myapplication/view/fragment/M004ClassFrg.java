@@ -48,6 +48,13 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         rvClass.setLayoutManager(new LinearLayoutManager(mContext));
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        initViews();
+        initData();
+    }
+
     private void initData() {
 
         listData = new ArrayList<>();

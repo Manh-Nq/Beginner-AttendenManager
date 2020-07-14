@@ -2,6 +2,7 @@ package com.techja.myapplication.utils;
 
 
 import com.techja.myapplication.model.ClassEntity;
+import com.techja.myapplication.model.CompanyEntity;
 import com.techja.myapplication.model.StudentEntity;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class StorageCommon {
     private ArrayList<ClassEntity> listClass;
     private ArrayList<StudentEntity> listStudent;
     private StudentEntity studentEntity;
+    private CompanyEntity companyEntity;
 
 
     public StorageCommon() {
@@ -23,6 +25,13 @@ public class StorageCommon {
 
     }
 
+    public CompanyEntity getCompanyEntity() {
+        return companyEntity;
+    }
+
+    public void setCompanyEntity(CompanyEntity companyEntity) {
+        this.companyEntity = companyEntity;
+    }
 
     public ClassEntity getClassEntity() {
         return classEntity;

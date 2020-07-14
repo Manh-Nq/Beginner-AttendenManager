@@ -2,6 +2,7 @@ package com.techja.myapplication.presenter;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.firebase.firestore.DocumentReference;
@@ -24,6 +25,7 @@ public class M002ProfileCompanyPresenter extends BasePresenter<OnM002ProfileCall
 
         DocumentReference doc = fStore.collection("codeAttendance").document("TECHJA");
         doc.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+
 
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
