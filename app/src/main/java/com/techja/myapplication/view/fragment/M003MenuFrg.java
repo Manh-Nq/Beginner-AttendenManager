@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM003MenuCallbackToView;
 import com.techja.myapplication.presenter.M003MenuPresenter;
+import com.techja.myapplication.utils.CommonUtils;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.event.OnM003MenuCallBack;
 
@@ -56,7 +57,9 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
         dialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                                FirebaseAuth.getInstance().signOut();
+                FirebaseAuth.getInstance().signOut();
+                mCallBack.showFragment(M001LoginFrg.TAG);
+                CommonUtils.getInstance().saveAccount("","","");
                 dialog.dismiss();
             }
         });

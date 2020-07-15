@@ -35,8 +35,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
     @Override
     public void onBindViewHolder(@NonNull ClassHolder holder, int position) {
         ClassEntity entity = listData.get(position);
-        holder.tvClassName.setText(entity.getClassName());
-        holder.tvClassCode.setText(entity.getClassCode());
+        holder.tvClassName.setText(entity.getClassName().toUpperCase());
+        holder.tvClassCode.setText(entity.getClassCode().toUpperCase());
         holder.tvClassCode.setTag(entity);
 
     }

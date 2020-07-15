@@ -19,5 +19,6 @@ public class M002ChangeCodePresenter extends BasePresenter<OnM002ChangeCodeCallB
         DocumentReference doc = FirebaseFirestore.getInstance().collection("codeAttendance").document("TECHJA");
         doc.set(entity);
         mListener.showToast("change code attendance success fully");
+
     }
 }

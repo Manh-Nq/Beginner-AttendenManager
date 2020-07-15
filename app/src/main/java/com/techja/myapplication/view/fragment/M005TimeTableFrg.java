@@ -44,8 +44,8 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         lnTimetable = findViewById(R.id.ln_time_table);
         lnTimetable.removeAllViews();
         btEditTable = findViewById(R.id.bt_edit_table, this);
-        tvClassName = findViewById(R.id.tv_class_name_005, App.getInstance().getRegularFont());
-        tvClassName.setText(getStorage().getClassEntity().getClassName());
+        tvClassName = findViewById(R.id.tv_class_name_005, App.getInstance().getBoldFont());
+        tvClassName.setText(getStorage().getClassEntity().getClassName().toUpperCase());
     }
 
     @Override
@@ -72,6 +72,13 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
             TextView tvDetail = item.findViewById(R.id.tv_detail);
             TextView tvTeacher = item.findViewById(R.id.tv_teacher);
             TextView tvNote = item.findViewById(R.id.tv_note);
+
+            tvDay.setTypeface(App.getInstance().getRegularFont());
+            tvTime.setTypeface(App.getInstance().getRegularFont());
+            tvDetail.setTypeface(App.getInstance().getRegularFont());
+            tvTeacher.setTypeface(App.getInstance().getRegularFont());
+            tvNote.setTypeface(App.getInstance().getRegularFont());
+
             tvDay.setText(day);
             tvTime.setText(time);
             tvDetail.setText(detail);
