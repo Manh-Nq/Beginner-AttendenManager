@@ -3,7 +3,8 @@ package com.techja.myapplication.view.fragment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +27,8 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
     private ClassAdapter adapter;
     private List<ClassEntity> listData;
     private Button btEdit;
-
+    private ProgressBar progressBar;
+    private LinearLayout lnFrg;
 
     @Override
     protected M004ClassPresenter getPresenter() {
@@ -40,20 +42,16 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
 
     @Override
     protected void initViews() {
+        progressBar = findViewById(R.id.progress_bar_004);
+        lnFrg = findViewById(R.id.ln_m004_frg);
         btEdit = findViewById(R.id.bt_more_m004, this);
         mPresenter.getListClass();
         rvClass = rootView.findViewById(R.id.rv_class);
-        initData();
-        rvClass.setAdapter(adapter);
         rvClass.setLayoutManager(new LinearLayoutManager(mContext));
+
+
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        initViews();
-        initData();
-    }
 
     private void initData() {
 
@@ -62,6 +60,7 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         Log.d(TAG, "initViews: " + listData.size());
         adapter = new ClassAdapter(listData, mContext);
         adapter.setCallBackItem(this);
+        rvClass.setAdapter(adapter);
     }
 
     @Override
@@ -88,4 +87,20 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         mCallBack.showFragment(M005TimeTableFrg.TAG);
     }
 
+
+    @Override
+    public void updateData() {
+        initData();
+    }
+
+    @Override
+    public void showProgressBar(boolean b) {
+        if (b) {
+            progressBar.setVisibility(View.VISIBLE);
+            lnFrg.setVisibility(View.GONE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            lnFrg.setVisibility(View.VISIBLE);
+        }
+    }
 }

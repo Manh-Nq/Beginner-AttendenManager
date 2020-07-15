@@ -2,11 +2,13 @@ package com.techja.myapplication.view.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM007ListStudentCallBackToView;
 import com.techja.myapplication.model.StudentEntity;
@@ -25,6 +27,9 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     private RecyclerView rvStudent;
     private StudentAdapter adapter;
     private List<StudentEntity> listData;
+    private List<StudentEntity> listTmp;
+    private LinearLayout lnFrg;
+    private ProgressBar progressBar;
 
     @Override
     protected M007ListStudentPresenter getPresenter() {
@@ -38,27 +43,15 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
 
     @Override
-    public void onStart() {
-        super.onStart();
-        mPresenter.getUserInfoStudent();
-        List<StudentEntity> listTmp = getStorage().getListStudent();
-        initData(listTmp);
-        rvStudent.setAdapter(adapter);
-        rvStudent.setLayoutManager(new LinearLayoutManager(mContext));
-
-    }
-
-    @Override
     protected void initViews() {
 
-
+        progressBar = findViewById(R.id.progress_bar_007);
+        lnFrg = findViewById(R.id.ln_frg_007);
         rvStudent = findViewById(R.id.rv_class_007);
         mPresenter.getUserInfoStudent();
-        List<StudentEntity> listTmp = getStorage().getListStudent();
-        initData(listTmp);
-        rvStudent.setAdapter(adapter);
-        rvStudent.setLayoutManager(new LinearLayoutManager(mContext));
+        listTmp = getStorage().getListStudent();
 
+        rvStudent.setLayoutManager(new LinearLayoutManager(mContext));
     }
 
     private void initData(List<StudentEntity> listTmp) {
@@ -74,6 +67,8 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
         }
         adapter = new StudentAdapter(listData, mContext);
         adapter.setClickItemStudentListener(this);
+        rvStudent.setAdapter(adapter);
+
     }
 
     @Override
@@ -100,7 +95,7 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
     @Override
     public void callPhoneForStudent(String phone) {
-        if(phone.equals("") || phone==null) return;
+        if (phone.equals("") || phone == null) return;
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + phone));
@@ -110,5 +105,21 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     @Override
     public void showFragment(String tag) {
 
+    }
+
+    @Override
+    public void updateData() {
+        initData(listTmp);
+    }
+
+    @Override
+    public void showProgressbar(boolean b) {
+        if (b) {
+            progressBar.setVisibility(View.VISIBLE);
+            lnFrg.setVisibility(View.GONE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            lnFrg.setVisibility(View.VISIBLE);
+        }
     }
 }

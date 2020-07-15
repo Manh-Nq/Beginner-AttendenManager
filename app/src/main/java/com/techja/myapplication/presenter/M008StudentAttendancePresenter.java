@@ -17,6 +17,7 @@ public class M008StudentAttendancePresenter extends BasePresenter<OnM008Attendan
     }
 
     public void getHistoryAttendanceStudent(String email, String classCode) {
+        mListener.showProgressBar(true);
         try {
             FirebaseFirestore.getInstance().collection("diemdanh").document(classCode)
                     .collection(email)
@@ -31,6 +32,7 @@ public class M008StudentAttendancePresenter extends BasePresenter<OnM008Attendan
                                     mListener.addAttendanceToView((String) data.get("day"), (String) data.get("time"), (String) data.get("state"));
                                 }
                             }
+                            mListener.showProgressBar(false);
                         }
                     });
         } catch (Exception e) {

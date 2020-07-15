@@ -13,9 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
     <LinearLayout
+        android:id="@+id/ln_m005_frg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorWhite"

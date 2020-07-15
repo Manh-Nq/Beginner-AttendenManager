@@ -21,6 +21,7 @@ public class M006ListClassPresenter extends BasePresenter<OnM006ListClassCallBac
 
 
     public void getListClass() {
+        mListener.showProgressbar(true);
         FirebaseFirestore.getInstance()
                 .collection("class")
                 .get()
@@ -34,8 +35,10 @@ public class M006ListClassPresenter extends BasePresenter<OnM006ListClassCallBac
                                 Map<String, Object> data = document.getData();
 
                                 getStorage().addClass((String) data.get("className"), (String) data.get("classCode"));
+                                mListener.updateData();
                             }
                         }
+                        mListener.showProgressbar(false);
                     }
                 });
     }

@@ -10,7 +10,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.techja.myapplication.callback.OnM004ClassCallbackToView;
 
-import java.util.List;
 import java.util.Map;
 
 
@@ -22,7 +21,7 @@ public class M004ClassPresenter extends BasePresenter<OnM004ClassCallbackToView>
     }
 
     public void getListClass() {
-
+        mListener.showProgressBar(true);
         FirebaseFirestore.getInstance()
                 .collection("class")
                 .get()
@@ -35,9 +34,11 @@ public class M004ClassPresenter extends BasePresenter<OnM004ClassCallbackToView>
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> data = document.getData();
                                 getStorage().addClass((String) data.get("className"), (String) data.get("classCode"));
+                                mListener.updateData();
                             }
 
                         }
+                        mListener.showProgressBar(false);
                     }
                 });
     }

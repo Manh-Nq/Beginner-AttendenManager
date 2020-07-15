@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.techja.myapplication.R;
@@ -15,6 +16,8 @@ import com.techja.myapplication.view.event.OnM008StudentAttendanceCallback;
 public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendancePresenter, OnM008StudentAttendanceCallback> implements OnM008AttendanceCallbackToView {
     public static final String TAG = M008StudentAttendanceFrg.class.getName();
     private LinearLayout lnHistory;
+    private ProgressBar progressBar;
+    private LinearLayout lnFrg;
 
     @Override
     protected M008StudentAttendancePresenter getPresenter() {
@@ -28,6 +31,8 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
 
     @Override
     protected void initViews() {
+        progressBar = findViewById(R.id.progress_008);
+        lnFrg = findViewById(R.id.ln_frg_008);
         try {
             String classCode = getStorage().getStudentEntity().getClassName();
             String email = getStorage().getStudentEntity().getEmail();
@@ -68,6 +73,17 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
             lnHistory.addView(itemView);
         } catch (Exception e) {
 
+        }
+    }
+
+    @Override
+    public void showProgressBar(boolean b) {
+        if (b) {
+            progressBar.setVisibility(View.VISIBLE);
+            lnFrg.setVisibility(View.GONE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            lnFrg.setVisibility(View.VISIBLE);
         }
     }
 }

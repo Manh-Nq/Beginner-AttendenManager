@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.techja.myapplication.R;
@@ -19,6 +20,8 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
     private Button btEditTable;
     private String classCode;
     private TextView tvClassName;
+    private ProgressBar progressBar;
+    private LinearLayout lnFrg;
 
 
     @Override
@@ -33,7 +36,8 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
 
     @Override
     protected void initViews() {
-
+        lnFrg = findViewById(R.id.ln_m005_frg);
+        progressBar = findViewById(R.id.progress_load_data);
         this.classCode = getStorage().getClassEntity().getClassCode();
         mPresenter.getClassTimetable(this.classCode);
         lnTimetable = findViewById(R.id.ln_time_table);
@@ -74,10 +78,22 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
             tvNote.setText(note);
             lnTimetable.addView(item);
 
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
+    }
+
+    @Override
+    public void showProgressBar(boolean b) {
+        if(b){
+            progressBar.setVisibility(View.VISIBLE);
+            lnFrg.setVisibility(View.GONE);
+        }else{
+            progressBar.setVisibility(View.GONE);
+            lnFrg.setVisibility(View.VISIBLE);
+        }
     }
 }

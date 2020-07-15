@@ -2,7 +2,8 @@ package com.techja.myapplication.view.fragment;
 
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,8 @@ public class M006ListClassFrg extends BaseFragment<M006ListClassPresenter, OnM00
     private RecyclerView rvClass;
     private ClassM006Adapter adapter;
     private List<ClassEntity> listData;
+    private ProgressBar progressBar;
+    private LinearLayout lnFrg;
 
 
     @Override
@@ -38,11 +41,11 @@ public class M006ListClassFrg extends BaseFragment<M006ListClassPresenter, OnM00
 
     @Override
     protected void initViews() {
+        progressBar = findViewById(R.id.progress_bar_006);
+        lnFrg = findViewById(R.id.ln_frg_006);
         rvClass = rootView.findViewById(R.id.rv_class_006);
         mPresenter.getListClass();
-        initData();
         ivBack = findViewById(R.id.iv_back_006, this);
-        rvClass.setAdapter(adapter);
         rvClass.setLayoutManager(new LinearLayoutManager(mContext));
 
     }
@@ -53,6 +56,8 @@ public class M006ListClassFrg extends BaseFragment<M006ListClassPresenter, OnM00
         listData = getStorage().getListClass();
         adapter = new ClassM006Adapter(listData, mContext);
         adapter.setClicklistener(this);
+        rvClass.setAdapter(adapter);
+
     }
 
     @Override
@@ -73,6 +78,22 @@ public class M006ListClassFrg extends BaseFragment<M006ListClassPresenter, OnM00
         getStorage().setClassCode(data.getClassCode());
         mCallBack.showFragment(M007ListStudentFrg.TAG);
 
+    }
+
+    @Override
+    public void updateData() {
+        initData();
+    }
+
+    @Override
+    public void showProgressbar(boolean b) {
+        if (b) {
+            progressBar.setVisibility(View.VISIBLE);
+            lnFrg.setVisibility(View.GONE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            lnFrg.setVisibility(View.VISIBLE);
+        }
     }
 }
 

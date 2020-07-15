@@ -18,6 +18,7 @@ public class M007ListStudentPresenter extends BasePresenter<OnM007ListStudentCal
     }
 
     public void getUserInfoStudent() {
+        mListener.showProgressbar(true);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         FirebaseFirestore.getInstance()
@@ -35,8 +36,10 @@ public class M007ListStudentPresenter extends BasePresenter<OnM007ListStudentCal
                                         , (String) data.get("classCode")
                                         , (String) data.get("email")
                                         ,(String)data.get("phoneNo"));
+                                mListener.updateData();
                             }
                         }
+                        mListener.showProgressbar(false);
                     }
                 });
     }

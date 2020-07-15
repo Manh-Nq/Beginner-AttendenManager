@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -21,6 +22,7 @@ public class M005TimeTablePresenter extends BasePresenter<OnM005TimetableCallBac
     }
 
     public void getClassTimetable(String classCode) {
+        mListener.showProgressBar(true);
         if (classCode == null) {
             return;
         }
@@ -40,6 +42,7 @@ public class M005TimeTablePresenter extends BasePresenter<OnM005TimetableCallBac
                                 mListener.addTimetable((String) data.get("day"), (String) data.get("time"), (String) data.get("detail"), (String) data.get("teacher"), (String) data.get("note"));
                             }
                         }
+                        mListener.showProgressBar(false);
                     }
                 });
     }
