@@ -2,11 +2,13 @@ package com.techja.myapplication.view.base;
 
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -50,6 +52,22 @@ public abstract class BaseFragment<K extends BasePresenter, C extends OnActionCa
     protected final <T extends View> T findViewById(int id) {
         return rootView.findViewById(id);
     }
+    protected final <T extends View> T findViewById(int id, View.OnClickListener event,Typeface typeFace) {
+        T view = rootView.findViewById(id);
+        view.setOnClickListener(event);
+        if (typeFace != null && view instanceof TextView || view instanceof EditText) {
+            ((TextView) view).setTypeface(typeFace);
+            ((EditText) view).setTypeface(typeFace);
+        }
+        return view;
+    }
+    protected final <T extends View> T findViewById(int id,Typeface typeFace) {
+        T view = rootView.findViewById(id);
+        if (typeFace != null && view instanceof TextView || view instanceof EditText) {
+            ((TextView) view).setTypeface(typeFace);
+        }
+        return view;
+    }
 
     protected final <T extends View> T findViewById(int id, View.OnClickListener event) {
         T v = rootView.findViewById(id);
@@ -77,7 +95,7 @@ public abstract class BaseFragment<K extends BasePresenter, C extends OnActionCa
 
     protected String textOf(EditText edt) {
         if (edt != null) {
-            return edt.getText().toString();
+            return edt.getText().toString().trim();
         }
         return null;
 

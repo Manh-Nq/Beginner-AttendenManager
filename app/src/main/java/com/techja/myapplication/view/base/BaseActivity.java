@@ -50,7 +50,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
     public String textOf(EditText edt) {
         if (edt != null) {
-            return edt.getText().toString();
+            return edt.getText().toString().trim();
         }
         return null;
     }

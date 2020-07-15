@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM001LoginCallbackToView;
 import com.techja.myapplication.presenter.M001LoginPresenter;
@@ -47,10 +48,10 @@ public class M001LoginFrg extends BaseFragment<M001LoginPresenter, OnM001LoginCa
         progressBar = findViewById(R.id.progress_bar);
         cbSaveAcc = findViewById(R.id.cb_save_account);
         ivShowhide = findViewById(R.id.iv_show_pass, this);
-        edtPass = findViewById(R.id.edt_password);
-        edtMail = findViewById(R.id.edt_email);
+        edtPass = findViewById(R.id.edt_password,App.getInstance().getRegularFont());
+        edtMail = findViewById(R.id.edt_email,App.getInstance().getRegularFont());
         btLogin = findViewById(R.id.bt_login, this);
-        edtCodeAdmin = findViewById(R.id.edt_code_admin);
+        edtCodeAdmin = findViewById(R.id.edt_code_admin,App.getInstance().getRegularFont());
 
 
         mPresenter.getCodeAdmin(new String[]{"codemanager"});

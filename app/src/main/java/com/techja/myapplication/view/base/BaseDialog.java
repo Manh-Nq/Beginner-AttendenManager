@@ -47,7 +47,7 @@ public abstract class BaseDialog<P extends BasePresenter, C extends OnActionCall
 
     public String textOf(EditText edt) {
         if (edt != null) {
-            return edt.getText().toString();
+            return edt.getText().toString().trim();
         }
         return null;
     }

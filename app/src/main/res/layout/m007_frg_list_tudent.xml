@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/d_16"
-        android:background="@color/colorGreen"
         android:gravity="center"
         android:text="Danh sách học viên"
         android:textColor="@color/colorBlack"

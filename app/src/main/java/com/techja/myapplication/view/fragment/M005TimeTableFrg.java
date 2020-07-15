@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
 import com.techja.myapplication.presenter.M005TimeTablePresenter;
@@ -43,7 +44,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         lnTimetable = findViewById(R.id.ln_time_table);
         lnTimetable.removeAllViews();
         btEditTable = findViewById(R.id.bt_edit_table, this);
-        tvClassName = findViewById(R.id.tv_class_name_005);
+        tvClassName = findViewById(R.id.tv_class_name_005, App.getInstance().getRegularFont());
         tvClassName.setText(getStorage().getClassEntity().getClassName());
     }
 

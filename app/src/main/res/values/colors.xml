@@ -16,4 +16,6 @@
     <color name="colorDarkGreen">#386F24</color>
     <color name="colorblue">#241F21</color>
     <color name="colorGreenAlpha">#0047D987</color>
+    <color name="colortvLogo">#F66636</color>
+    <color name="colortvLogo1">#C3FAE5DB</color>
 </resources>

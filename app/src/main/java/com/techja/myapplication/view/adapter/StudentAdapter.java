@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.model.StudentEntity;
 
@@ -58,6 +59,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
             tvEmail = itemView.findViewById(R.id.tv_email_007);
             tvPhone = itemView.findViewById(R.id.tv_phone_007);
             lnPhone = itemView.findViewById(R.id.ln_phone_007);
+
+            tvName.setTypeface(App.getInstance().getRegularFont());
+            tvClassName.setTypeface(App.getInstance().getRegularFont());
+            tvEmail.setTypeface(App.getInstance().getRegularFont());
+            tvPhone.setTypeface(App.getInstance().getRegularFont());
+
             lnPhone.setOnClickListener(this);
             tvName.setOnClickListener(this);
             tvEmail.setOnClickListener(this);

@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM002ProfileCallBackToView;
 import com.techja.myapplication.model.CompanyEntity;
@@ -33,10 +34,10 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
     @Override
     protected void initViews() {
         btEdit = findViewById(R.id.bt_edit_002, this);
-        tvCode = findViewById(R.id.tv_code_002);
-        tvLat = findViewById(R.id.tv_lat);
-        tvLong = findViewById(R.id.tv_long);
-        tvRange = findViewById(R.id.tv_range);
+        tvCode = findViewById(R.id.tv_code_002, App.getInstance().getRegularFont());
+        tvLat = findViewById(R.id.tv_lat, App.getInstance().getRegularFont());
+        tvLong = findViewById(R.id.tv_long, App.getInstance().getRegularFont());
+        tvRange = findViewById(R.id.tv_range, App.getInstance().getRegularFont());
         mPresenter.getInfoCode(new String[]{"codeDD", "latitude", "longitude", "maxdistance"});
 
 
@@ -50,7 +51,7 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.bt_edit_002) {
-            CompanyEntity entity = new CompanyEntity(code,lat,longt,range);
+            CompanyEntity entity = new CompanyEntity(code, lat, longt, range);
             getStorage().setCompanyEntity(entity);
             M002ChangeCodeDialog dialog = new M002ChangeCodeDialog(mContext);
             dialog.show();

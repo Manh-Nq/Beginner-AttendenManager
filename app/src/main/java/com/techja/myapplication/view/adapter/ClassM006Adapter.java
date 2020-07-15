@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.model.ClassEntity;
 
@@ -52,7 +53,9 @@ public class ClassM006Adapter extends RecyclerView.Adapter<ClassM006Adapter.Clas
         public ClassM006Holder(@NonNull View itemView) {
             super(itemView);
             tvClassName = itemView.findViewById(R.id.tv_name_class_m006);
+            tvClassName.setTypeface(App.getInstance().getRegularFont());
             tvClassCode = itemView.findViewById(R.id.tv_class_code_m006);
+            tvClassCode.setTypeface(App.getInstance().getRegularFont());
             btListHS = itemView.findViewById(R.id.bt_list_006);
             btListHS.setOnClickListener(new View.OnClickListener() {
                 @Override

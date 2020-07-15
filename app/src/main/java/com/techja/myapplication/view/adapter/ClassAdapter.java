@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.model.ClassEntity;
 
@@ -52,7 +53,9 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         public ClassHolder(@NonNull View itemView) {
             super(itemView);
             tvClassCode = itemView.findViewById(R.id.tv_class_code_m004);
+            tvClassCode.setTypeface(App.getInstance().getRegularFont());
             tvClassName = itemView.findViewById(R.id.tv_name_class_m004);
+            tvClassName.setTypeface(App.getInstance().getRegularFont());
             btTimetable = itemView.findViewById(R.id.bt_timetable_dialog);
             btTimetable.setOnClickListener(this);
 
