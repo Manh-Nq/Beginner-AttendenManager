@@ -46,7 +46,7 @@ public class ClassM006Adapter extends RecyclerView.Adapter<ClassM006Adapter.Clas
         return listData.size();
     }
 
-    public class ClassM006Holder extends RecyclerView.ViewHolder {
+    public class ClassM006Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvClassName, tvClassCode;
         Button btListHS;
 
@@ -56,19 +56,22 @@ public class ClassM006Adapter extends RecyclerView.Adapter<ClassM006Adapter.Clas
             tvClassName.setTypeface(App.getInstance().getRegularFont());
             tvClassCode = itemView.findViewById(R.id.tv_class_code_m006);
             tvClassCode.setTypeface(App.getInstance().getRegularFont());
-            btListHS = itemView.findViewById(R.id.bt_list_006);
-            btListHS.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ClassEntity data = (ClassEntity) tvClassName.getTag();
-                    callBack.clickButtonListHS(data);
-                }
-            });
+            tvClassName.setOnClickListener(this);
+            tvClassCode.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.tv_name_class_m006 || v.getId() == R.id.tv_class_code_m006) {
+                ClassEntity data = (ClassEntity) tvClassName.getTag();
+                callBack.clickButtonListHS(data);
+            }
         }
     }
 
     private M006AdapterListener callBack;
+
 
     public void setClicklistener(M006AdapterListener event) {
         callBack = event;

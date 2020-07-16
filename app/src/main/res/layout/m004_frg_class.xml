@@ -43,7 +43,7 @@
                 android:layout_width="@dimen/d_50"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/d_16"
-                android:src="@drawable/ic_class" />
+                android:src="@drawable/ic_lop" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,13 +68,7 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <ImageView
-                android:layout_width="@dimen/d_50"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_tv_class"
-                android:padding="@dimen/d_10"
-                android:src="@drawable/ic_class_name"
-                android:tint="@color/colorWhite" />
+
 
             <TextView
                 android:layout_width="0dp"
@@ -87,21 +81,16 @@
                 android:textSize="@dimen/d_15"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="@dimen/d_50"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_tv_class"
-                android:padding="@dimen/d_10"
-                android:src="@drawable/ic_sharp_code"
-                android:tint="@color/colorWhite" />
+
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/colortvLogo"
+                android:background="@drawable/bg_tv_class"
                 android:gravity="center"
                 android:text="CLASSCODE"
+
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/d_15"
                 android:textStyle="bold" />

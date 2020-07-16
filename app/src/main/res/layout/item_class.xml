@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="100dp"
     android:background="@color/colorWhite"
     android:orientation="vertical"
     android:weightSum="3">
@@ -24,12 +24,11 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:padding="@dimen/d_10"
-                android:layout_width="@dimen/d_50"
+                android:layout_width="@dimen/d40"
                 android:layout_height="match_parent"
                 android:background="@color/colorWhite"
-                android:src="@drawable/ic_baseline_android"
-                android:tint="@color/colorGreen" />
+                android:padding="@dimen/d_10"
+                android:src="@drawable/ic_class" />
 
             <TextView
                 android:id="@+id/tv_name_class_m004"
@@ -38,9 +37,10 @@
                 android:layout_weight="1"
                 android:background="@color/colorWhite"
                 android:gravity="center"
+                android:padding="@dimen/d_10"
                 android:text="Techja k1"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/d_20"
+                android:textSize="@dimen/d_16"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -55,52 +55,28 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-        <ImageView
-            android:padding="@dimen/d_10"
-            android:layout_width="@dimen/d_50"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite"
-            android:src="@drawable/ic_baseline_emoji_emotions"
-            android:tint="@color/colorGreen" />
-        <TextView
+            <ImageView
+                android:layout_width="@dimen/d40"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="@dimen/d_10"
+                android:src="@drawable/ic_qrcode" />
 
-            android:id="@+id/tv_class_code_m004"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorWhite"
-            android:gravity="center"
-            android:text="TDNDZ123"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_class_code_m004"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:padding="@dimen/d_10"
+                android:text="TDNDZ123"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_16"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d_5"
-        android:layout_marginBottom="@dimen/d_20"
-        android:gravity="center"
-        android:weightSum="3">
-
-        <Button
-            android:id="@+id/bt_timetable_dialog"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/d_10"
-            android:layout_marginRight="@dimen/d_16"
-            android:layout_weight="1"
-
-            android:background="@drawable/bg_bt_timetable"
-            android:text="timeTable"
-            android:textColor="@color/colorWhiteAlpha"
-            android:textSize="@dimen/d_15"
-            android:textStyle="bold" />
-
-
-    </TableRow>
 </LinearLayout>

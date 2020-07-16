@@ -56,8 +56,9 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
             tvClassCode.setTypeface(App.getInstance().getRegularFont());
             tvClassName = itemView.findViewById(R.id.tv_name_class_m004);
             tvClassName.setTypeface(App.getInstance().getRegularFont());
-            btTimetable = itemView.findViewById(R.id.bt_timetable_dialog);
-            btTimetable.setOnClickListener(this);
+
+            tvClassName.setOnClickListener(this);
+            tvClassCode.setOnClickListener(this);
 
         }
 
@@ -65,7 +66,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         @Override
         public void onClick(View v) {
             ClassEntity entity = (ClassEntity) tvClassCode.getTag();
-            if (v.getId() == R.id.bt_timetable_dialog) {
+            if (v.getId() == R.id.tv_name_class_m004 || v.getId() == R.id.tv_class_code_m004) {
                 callBack.clickButtonTimetable(entity);
             }
         }
