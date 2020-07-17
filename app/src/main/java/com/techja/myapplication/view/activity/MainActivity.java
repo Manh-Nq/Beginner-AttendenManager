@@ -28,6 +28,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements OnMainC
 
     public static final int REQUEST_CODE = 1996;
 
+
     @Override
     protected MainPresenter getPresenter() {
         return new MainPresenter(this);
@@ -37,7 +38,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements OnMainC
     protected void initViews() {
         if(checkSelfPermission(Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED ||
                 checkSelfPermission(Manifest.permission.INTERNET)!= PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.CALL_PHONE,Manifest.permission.INTERNET},REQUEST_CODE);
+            requestPermissions(new String[]{Manifest.permission.CALL_PHONE
+                    ,Manifest.permission.INTERNET},REQUEST_CODE);
 
         }
         showFragment(M000SplashFrg.TAG);

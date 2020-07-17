@@ -30,7 +30,7 @@ public class M001LoginFrg extends BaseFragment<M001LoginPresenter, OnM001LoginCa
     private Button btLogin;
     private CheckBox cbSaveAcc;
     private ProgressBar progressBar;
-    private String codeAdmin;
+    private String codeAdmin, email, password;
 
 
     @Override
@@ -48,13 +48,13 @@ public class M001LoginFrg extends BaseFragment<M001LoginPresenter, OnM001LoginCa
         progressBar = findViewById(R.id.progress_bar);
         cbSaveAcc = findViewById(R.id.cb_save_account);
         ivShowhide = findViewById(R.id.iv_show_pass, this);
-        edtPass = findViewById(R.id.edt_password,App.getInstance().getRegularFont());
-        edtMail = findViewById(R.id.edt_email,App.getInstance().getRegularFont());
+        edtPass = findViewById(R.id.edt_password, App.getInstance().getRegularFont());
+        edtMail = findViewById(R.id.edt_email, App.getInstance().getRegularFont());
         btLogin = findViewById(R.id.bt_login, this);
-        edtCodeAdmin = findViewById(R.id.edt_code_admin,App.getInstance().getRegularFont());
+        edtCodeAdmin = findViewById(R.id.edt_code_admin, App.getInstance().getRegularFont());
 
 
-        mPresenter.getCodeAdmin(new String[]{"codemanager"});
+        mPresenter.getCodeAdmin(new String[]{"codemanager", "email","password"});
 
         String[] arrDataAccount = CommonUtils.getInstance().getAccount();
         String email = arrDataAccount[0];
@@ -84,19 +84,31 @@ public class M001LoginFrg extends BaseFragment<M001LoginPresenter, OnM001LoginCa
 
     private void login() {
 
-        if (textOf(edtMail).isEmpty()) {
-            edtMail.setError("Enter your email");
-            return;
-        }
-        if (textOf(edtPass).isEmpty()) {
-            edtPass.setError("Enter your password");
-            return;
-        }
-        if (!textOf(edtCodeAdmin).equals(codeAdmin)) {
-            showToast("Admin code does not exist");
-        } else {
+
+        if (checkValid(textOf(edtMail), textOf(edtPass), textOf(edtCodeAdmin))) {
             mPresenter.login(textOf(edtMail), textOf(edtPass), cbSaveAcc.isChecked(), textOf(edtCodeAdmin));
+
         }
+
+    }
+
+    private boolean checkValid(String mail, String pass, String code) {
+        if (mail.isEmpty()) {
+            edtMail.setError("Enter your email");
+            edtMail.requestFocus();
+            return false;
+        }
+        if (pass.isEmpty()) {
+            edtPass.setError("Enter your password");
+            return false;
+        }
+
+
+        if (!code.equals(this.codeAdmin) || !mail.equals(this.email)) {
+            showToast("Admin code does not exist or Email is not a manager");
+            return false;
+        }
+        return true;
     }
 
     private void showHidePass() {
@@ -123,7 +135,9 @@ public class M001LoginFrg extends BaseFragment<M001LoginPresenter, OnM001LoginCa
     @Override
     public void getCodeAdmin(List<String> listData) {
         this.codeAdmin = listData.get(0);
-        Log.d(TAG, "getCodeAdmin: " + codeAdmin);
+        this.email = listData.get(1);
+        this.password= listData.get(2);
+        Log.d(TAG, "getCodeAdmin: " + this.email);
     }
 
     @Override

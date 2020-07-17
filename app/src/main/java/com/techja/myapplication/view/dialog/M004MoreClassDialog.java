@@ -3,6 +3,7 @@ package com.techja.myapplication.view.dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import com.techja.myapplication.view.event.OnM004MoreClassCallBackToParent;
 public class M004MoreClassDialog extends BaseDialog<M004MoreClassPresenter, OnM004MoreClassCallBackToParent> implements OnM004MoreClassCallbacktoView {
     private TextView tvCancel, tvOk;
     private EditText edtClassName, edtClassCode, edtCoach, edtDescription, edtDuration, edtModul, edtSupporter;
+    private ProgressBar progressBar;
 
     public M004MoreClassDialog(@NonNull Context context) {
         super(context);
@@ -28,6 +30,7 @@ public class M004MoreClassDialog extends BaseDialog<M004MoreClassPresenter, OnM0
 
     @Override
     protected void initViews() {
+        progressBar = findViewById(R.id.progress_bar_morelass);
         edtClassCode = findViewById(R.id.edt_classCode);
         edtClassName = findViewById(R.id.edt_className);
         edtCoach = findViewById(R.id.edt_coach);
@@ -102,5 +105,21 @@ public class M004MoreClassDialog extends BaseDialog<M004MoreClassPresenter, OnM0
     @Override
     protected int getLayoutId() {
         return R.layout.dialog_more_class;
+    }
+
+    @Override
+    public void notificationSuccess() {
+        showToast("update timetable success fully");
+    }
+
+    @Override
+    public void showProgressBar(boolean b) {
+        if (b) {
+            progressBar.setVisibility(View.VISIBLE);
+
+        } else {
+            progressBar.setVisibility(View.GONE);
+
+        }
     }
 }

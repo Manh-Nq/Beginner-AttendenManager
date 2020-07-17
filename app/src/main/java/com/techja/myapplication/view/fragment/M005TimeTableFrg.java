@@ -10,10 +10,14 @@ import android.widget.TextView;
 import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
+import com.techja.myapplication.model.TimeTableEntity;
 import com.techja.myapplication.presenter.M005TimeTablePresenter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M005DialogEditTimeTable;
+import com.techja.myapplication.view.dialog.M005dialogChangeTimeTable;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
+
+import java.util.List;
 
 public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView {
     public static final String TAG = M005TimeTableFrg.class.getName();
@@ -63,45 +67,40 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         }
     }
 
-    @Override
-    public void addTimetable(String day, String time, String detail, String teacher, String note) {
-        try {
-            View item = LayoutInflater.from(mContext).inflate(R.layout.item_day, null);
-            TextView tvDay = item.findViewById(R.id.tv_day);
-            TextView tvTime = item.findViewById(R.id.tv_time);
-            TextView tvDetail = item.findViewById(R.id.tv_detail);
-            TextView tvTeacher = item.findViewById(R.id.tv_teacher);
-            TextView tvNote = item.findViewById(R.id.tv_note);
-
-            tvDay.setTypeface(App.getInstance().getRegularFont());
-            tvTime.setTypeface(App.getInstance().getRegularFont());
-            tvDetail.setTypeface(App.getInstance().getRegularFont());
-            tvTeacher.setTypeface(App.getInstance().getRegularFont());
-            tvNote.setTypeface(App.getInstance().getRegularFont());
-
-            tvDay.setText(day);
-            tvTime.setText(time);
-            tvDetail.setText(detail);
-            tvTeacher.setText(teacher);
-            tvNote.setText(note);
-            lnTimetable.addView(item);
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
     @Override
     public void showProgressBar(boolean b) {
-        if(b){
+        if (b) {
             progressBar.setVisibility(View.VISIBLE);
             lnFrg.setVisibility(View.GONE);
-        }else{
+        } else {
             progressBar.setVisibility(View.GONE);
             lnFrg.setVisibility(View.VISIBLE);
         }
+    }
+
+
+
+    @Override
+    public void addTimetable(String day, String time, String detail, String teacher, String note) {
+        View item = LayoutInflater.from(mContext).inflate(R.layout.item_day, null);
+        TextView tvDay = item.findViewById(R.id.tv_day);
+        TextView tvTime = item.findViewById(R.id.tv_time);
+        TextView tvDetail = item.findViewById(R.id.tv_detail);
+        TextView tvTeacher = item.findViewById(R.id.tv_teacher);
+        TextView tvNote = item.findViewById(R.id.tv_note);
+
+        tvDay.setTypeface(App.getInstance().getRegularFont());
+        tvTime.setTypeface(App.getInstance().getRegularFont());
+        tvDetail.setTypeface(App.getInstance().getRegularFont());
+        tvTeacher.setTypeface(App.getInstance().getRegularFont());
+        tvNote.setTypeface(App.getInstance().getRegularFont());
+
+        tvDay.setText(day);
+        tvTime.setText(time);
+        tvDetail.setText(detail);
+        tvTeacher.setText(teacher);
+        tvNote.setText(note);
+        lnTimetable.addView(item);
     }
 }

@@ -8,8 +8,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.callback.OnCallBackToView;
 import com.techja.myapplication.presenter.BasePresenter;
+import com.techja.myapplication.utils.StorageCommon;
 import com.techja.myapplication.view.event.OnActionCallBack;
 
 
@@ -66,6 +68,10 @@ public abstract class BaseDialog<P extends BasePresenter, C extends OnActionCall
         if (mContext != null) {
             Toast.makeText(mContext, yourString, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public StorageCommon getStorage(){
+        return App.getStorage();
     }
 }
 

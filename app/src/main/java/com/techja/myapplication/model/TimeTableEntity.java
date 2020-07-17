@@ -59,7 +59,7 @@ public class TimeTableEntity {
             TimeTableEntity item = (TimeTableEntity) obj;
             return item.day.equals(day) && item.detail.equals(detail)
                     && item.note.equals(note) && item.teacher.equals(teacher)
-                    && item.time.equals(time);
+                    && item.time.equals(time) && item.note.equals(note);
         }
         return super.equals(obj);
     }

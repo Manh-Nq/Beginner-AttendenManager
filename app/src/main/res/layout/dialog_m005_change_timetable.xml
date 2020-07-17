@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/colortvLogo1"
+    android:orientation="vertical"
+    android:padding="@dimen/d_16">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit time table"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/d_25" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_20"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/d_10"
+            android:gravity="center"
+            android:text="Day"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_20"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_day_dialog_change_tb005"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="định dạng Monday->Mon"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_20"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/d_10"
+            android:gravity="center"
+            android:text="time"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_20"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_time_dialog_change_tb005"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="định dạng h:mm"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_20"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/d_10"
+            android:gravity="center"
+            android:text="Detail"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_20"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_detail_dialog_change_tb005"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="nhập nội dung buổi học "
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_20"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/d_10"
+            android:gravity="center"
+            android:text="Coach"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_20"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_coach_dialog_change_tb005"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="nhập tên giảng viên"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_20"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/d_10"
+            android:gravity="center"
+            android:text="Note"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_20"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edt_note_dialog_change_tb005"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="Ghi chú"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/d_10">
+
+        <TextView
+            android:id="@+id/tv_cancel_edit_change_tb005"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_25" />
+
+        <TextView
+            android:id="@+id/tv_ok_edit_change_tb005"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_20"
+            android:layout_marginRight="@dimen/d_10"
+            android:text="OK"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_25" />
+    </TableRow>
+
+</LinearLayout>

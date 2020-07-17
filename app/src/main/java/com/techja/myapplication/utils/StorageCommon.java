@@ -4,6 +4,7 @@ package com.techja.myapplication.utils;
 import com.techja.myapplication.model.ClassEntity;
 import com.techja.myapplication.model.CompanyEntity;
 import com.techja.myapplication.model.StudentEntity;
+import com.techja.myapplication.model.TimeTableEntity;
 
 import java.util.ArrayList;
 
@@ -15,14 +16,39 @@ public class StorageCommon {
     private ClassEntity classEntity;
     private ArrayList<ClassEntity> listClass;
     private ArrayList<StudentEntity> listStudent;
+    private ArrayList<TimeTableEntity> listTable;
     private StudentEntity studentEntity;
     private CompanyEntity companyEntity;
+    private TimeTableEntity timeTableEntity;
 
 
     public StorageCommon() {
         listClass = new ArrayList<>();
         listStudent = new ArrayList<>();
+        listTable = new ArrayList<>();
 
+    }
+
+    public TimeTableEntity getTimeTableEntity() {
+        return timeTableEntity;
+    }
+
+    public void setTimeTableEntity(TimeTableEntity timeTableEntity) {
+        this.timeTableEntity = timeTableEntity;
+    }
+
+    public ArrayList<TimeTableEntity> getListTable() {
+
+        return listTable;
+    }
+
+    public void addListTable(String day, String time, String detail, String teacher, String note) {
+
+        TimeTableEntity entity = new TimeTableEntity(day, time, detail, teacher, note);
+        if (listTable.contains(entity)) {
+            return;
+        }
+        listTable.add(entity);
     }
 
     public CompanyEntity getCompanyEntity() {
@@ -61,8 +87,8 @@ public class StorageCommon {
         return listStudent;
     }
 
-    public void addStudent(String name, String className, String email,String phone) {
-        StudentEntity entity = new StudentEntity(name, className, email,phone);
+    public void addStudent(String name, String className, String email, String phone) {
+        StudentEntity entity = new StudentEntity(name, className, email, phone);
         if (listStudent.contains(entity)) {
             return;
         }
