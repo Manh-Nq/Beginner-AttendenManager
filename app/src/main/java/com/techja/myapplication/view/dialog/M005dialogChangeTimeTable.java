@@ -68,11 +68,43 @@ public class M005dialogChangeTimeTable extends BaseDialog<M005dialogChangeTimeTa
                 detail = textOf(edtDetail),
                 teacher = textOf(edtTeacher),
                 note = textOf(edtNote);
+        if (checkValid(day, time, detail, teacher, note)) {
+            String classCode = getStorage().getClassCode();
+            mPresenter.saveTimeTableToSever(day, time, detail, teacher, note, classCode);
+        }
 
-        String classCode = getStorage().getClassCode();
-        mPresenter.saveTimeTableToSever(day,time,detail,teacher,note,classCode);
+    }
 
+    private boolean checkValid(String day, String time, String detail, String teacher, String note) {
+        if (day.isEmpty()) {
+            edtDay.setError("Please enter your day");
+            edtDay.requestFocus();
+            return false;
 
+        }
+        if (time.isEmpty()) {
+            edtTime.setError("Please enter class time");
+            edtTime.requestFocus();
+            return false;
+        }
+
+        if (detail.isEmpty()) {
+            edtDetail.setError("Please enter class detail");
+            edtDetail.requestFocus();
+            return false;
+        }
+        if (teacher.isEmpty()) {
+            edtTeacher.setError("Please enter name teacher");
+            edtTeacher.requestFocus();
+            return false;
+        }
+        if (note.isEmpty()) {
+            edtNote.setError("Please enter class note");
+            edtNote.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
     @Override

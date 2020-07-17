@@ -17,7 +17,6 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         storage = new StorageCommon();
-        mBoldFont = Typeface.createFromAsset(getAssets(), "font/Roboto-Bold.ttf");
         mRegularFont = Typeface.createFromAsset(getAssets(), "font/Roboto-Light.ttf");
         mItalicFont = Typeface.createFromAsset(getAssets(), "font/Roboto-Italic.ttf");
     }
@@ -33,9 +32,7 @@ public class App extends Application {
         return mBoldFont;
     }
 
-    public Typeface getItalicFont() {
-        return mItalicFont;
-    }
+
 
 
     public static App getInstance() {

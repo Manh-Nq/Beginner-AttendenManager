@@ -15,7 +15,8 @@ public class M005dialogChangeTimeTablePresenter extends BasePresenter<OnM005Dial
     }
 
     public void saveTimeTableToSever(String day, String time, String detail, String teacher, String note, String classCode) {
-        DocumentReference doc = FirebaseFirestore.getInstance().collection("class").document(classCode).collection("timetable").document(day);
+        DocumentReference doc = FirebaseFirestore.getInstance().collection("class")
+                .document(classCode).collection("timetable").document(day);
 
         TimeTableEntity entity = new TimeTableEntity(day, time, detail, teacher, note);
         doc.set(entity).addOnCompleteListener(new OnCompleteListener<Void>() {

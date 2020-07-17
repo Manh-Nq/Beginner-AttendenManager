@@ -17,8 +17,6 @@ import com.techja.myapplication.view.dialog.M005DialogEditTimeTable;
 import com.techja.myapplication.view.dialog.M005dialogChangeTimeTable;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
 
-import java.util.List;
-
 public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView {
     public static final String TAG = M005TimeTableFrg.class.getName();
     private LinearLayout lnTimetable;
@@ -80,9 +78,9 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
     }
 
 
-
     @Override
     public void addTimetable(String day, String time, String detail, String teacher, String note) {
+        TimeTableEntity entity = new TimeTableEntity(day, time, detail, teacher, note);
         View item = LayoutInflater.from(mContext).inflate(R.layout.item_day, null);
         TextView tvDay = item.findViewById(R.id.tv_day);
         TextView tvTime = item.findViewById(R.id.tv_time);
@@ -101,6 +99,17 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         tvDetail.setText(detail);
         tvTeacher.setText(teacher);
         tvNote.setText(note);
+        tvNote.setTag(entity);
+        item.findViewById(R.id.iv_edit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimeTableEntity data = (TimeTableEntity) tvNote.getTag();
+                getStorage().setTimeTableEntity(data);
+                getStorage().setClassCode(classCode);
+                M005dialogChangeTimeTable dialog= new M005dialogChangeTimeTable(mContext);
+                dialog.show();
+            }
+        });
         lnTimetable.addView(item);
     }
 }
