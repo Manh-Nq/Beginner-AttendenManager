@@ -1,5 +1,6 @@
 package com.techja.myapplication.view.fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,9 +16,10 @@ import com.techja.myapplication.presenter.M005TimeTablePresenter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M005DialogEditTimeTable;
 import com.techja.myapplication.view.dialog.M005dialogChangeTimeTable;
+import com.techja.myapplication.view.event.OnM005DialogChangeTimeTableCallBackToParent;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
 
-public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView {
+public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView{
     public static final String TAG = M005TimeTableFrg.class.getName();
     private LinearLayout lnTimetable;
     private Button btEditTable;
@@ -39,6 +41,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
 
     @Override
     protected void initViews() {
+
         lnFrg = findViewById(R.id.ln_m005_frg);
         progressBar = findViewById(R.id.progress_load_data);
         this.classCode = getStorage().getClassEntity().getClassCode();
@@ -106,10 +109,14 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
                 TimeTableEntity data = (TimeTableEntity) tvNote.getTag();
                 getStorage().setTimeTableEntity(data);
                 getStorage().setClassCode(classCode);
-                M005dialogChangeTimeTable dialog= new M005dialogChangeTimeTable(mContext);
+                M005dialogChangeTimeTable dialog = new M005dialogChangeTimeTable(mContext);
                 dialog.show();
+
             }
         });
         lnTimetable.addView(item);
     }
+
+
+
 }

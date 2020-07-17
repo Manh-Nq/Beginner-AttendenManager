@@ -56,7 +56,7 @@ public class M005dialogChangeTimeTable extends BaseDialog<M005dialogChangeTimeTa
                 break;
             case R.id.tv_ok_edit_change_tb005:
                 saveToServer();
-                dismiss();
+
                 break;
 
         }
@@ -71,6 +71,7 @@ public class M005dialogChangeTimeTable extends BaseDialog<M005dialogChangeTimeTa
         if (checkValid(day, time, detail, teacher, note)) {
             String classCode = getStorage().getClassCode();
             mPresenter.saveTimeTableToSever(day, time, detail, teacher, note, classCode);
+            dismiss();
         }
 
     }
@@ -111,5 +112,7 @@ public class M005dialogChangeTimeTable extends BaseDialog<M005dialogChangeTimeTa
     protected int getLayoutId() {
         return R.layout.dialog_m005_change_timetable;
     }
+
+
 
 }
