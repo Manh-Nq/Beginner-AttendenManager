@@ -67,32 +67,39 @@ public class M004MoreClassDialog extends BaseDialog<M004MoreClassPresenter, OnM0
     private boolean checkValid(String className, String classCode, String coach, String description, String duration, String modul, String supporter) {
         if (className.isEmpty()) {
             edtClassName.setError("Please enter your class name");
+            edtClassName.requestFocus();
             return false;
         }
         if (classCode.isEmpty()) {
             edtClassCode.setError("Please enter your class code");
+            edtClassCode.requestFocus();
             return false;
         }
         if (coach.isEmpty()) {
             edtCoach.setError("Please enter your coach");
+            edtClassCode.requestFocus();
             return false;
         }
 
         if (description.isEmpty()) {
             edtDescription.setError("Please enter your description");
+            edtDescription.requestFocus();
             return false;
         }
         if (duration.isEmpty()) {
             edtDuration.setError("Please enter your duration");
+            edtDuration.requestFocus();
             return false;
         }
 
         if (modul.isEmpty()) {
             edtModul.setError("Please enter your modul");
+            edtModul.requestFocus();
             return false;
         }
         if (supporter.isEmpty()) {
             edtSupporter.setError("Please enter your supporter");
+            edtSupporter.requestFocus();
             return false;
         }
 
@@ -107,10 +114,6 @@ public class M004MoreClassDialog extends BaseDialog<M004MoreClassPresenter, OnM0
         return R.layout.dialog_more_class;
     }
 
-    @Override
-    public void notificationSuccess() {
-        showToast("update timetable success fully");
-    }
 
     @Override
     public void showProgressBar(boolean b) {

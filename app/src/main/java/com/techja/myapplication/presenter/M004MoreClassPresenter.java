@@ -26,8 +26,7 @@ public class M004MoreClassPresenter extends BasePresenter<OnM004MoreClassCallbac
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    mListener.notificationSuccess();
-
+                    mListener.showToast("update successfully");
                 } else {
                     mListener.showToast("update fail");
                 }

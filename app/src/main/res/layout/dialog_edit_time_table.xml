@@ -32,8 +32,9 @@
 
         <EditText
             android:id="@+id/edt_day_dialog_005"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
             android:hint="định dạng Monday->Mon"
             android:textColor="@color/colorBlack"
@@ -41,6 +42,8 @@
 
             <requestFocus />
         </EditText>
+
+
     </TableRow>
 
     <TableRow

@@ -98,8 +98,14 @@ public class M001LoginFrg extends BaseFragment<M001LoginPresenter, OnM001LoginCa
             edtMail.requestFocus();
             return false;
         }
+        if (code.isEmpty()) {
+            edtCodeAdmin.setError("Enter your code admin");
+            edtCodeAdmin.requestFocus();
+            return false;
+        }
         if (pass.isEmpty()) {
             edtPass.setError("Enter your password");
+            edtPass.requestFocus();
             return false;
         }
 

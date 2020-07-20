@@ -79,6 +79,7 @@ public class M001LoginPresenter extends BasePresenter<OnM001LoginCallbackToView>
                 }
                 mListener.getCodeAdmin(listData);
             }
+
         });
     }
 }

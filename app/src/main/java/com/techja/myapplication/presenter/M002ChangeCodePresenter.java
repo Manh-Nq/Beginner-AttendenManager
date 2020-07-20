@@ -1,6 +1,9 @@
 package com.techja.myapplication.presenter;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -17,8 +20,17 @@ public class M002ChangeCodePresenter extends BasePresenter<OnM002ChangeCodeCallB
     public void sendToServer(String code, String lat, String longt, String range) {
         CompanyEntity entity = new CompanyEntity(code, lat, longt, range);
         DocumentReference doc = FirebaseFirestore.getInstance().collection("codeAttendance").document("TECHJA");
-        doc.set(entity);
-        mListener.showToast("change code attendance success fully");
+        doc.set(entity).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    mListener.showToast("change code attendance success fully");
+                }else{
+                    mListener.showToast("change code attendance fail");
+                }
+            }
+        });
+
 
     }
 }
