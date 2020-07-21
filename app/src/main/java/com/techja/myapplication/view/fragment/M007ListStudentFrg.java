@@ -95,7 +95,7 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
     @Override
     public void callPhoneForStudent(String phone) {
-        if (phone.equals("") || phone == null) return;
+        if (phone.isEmpty()|| phone == null) return;
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + phone));

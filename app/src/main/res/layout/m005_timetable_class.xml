@@ -167,17 +167,35 @@
                 </LinearLayout>
             </ScrollView>
 
-            <Button
-                android:id="@+id/bt_more_table"
-                android:layout_width="100dp"
-                android:layout_height="@dimen/d_50"
-                android:layout_gravity="right"
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d_10"
-                android:layout_marginRight="@dimen/d_16"
-                android:background="@drawable/bg_edit_bt"
-                android:text="More"
-                android:textColor="@color/colorWhite" />
+                android:gravity="right">
 
+
+                <Button
+                    android:id="@+id/bt_more_coach"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/d_50"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/d_10"
+                    android:layout_marginRight="@dimen/d_16"
+                    android:background="@drawable/bg_edit_bt"
+                    android:text="+Coach"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/bt_more_table"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/d_50"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/d_10"
+                    android:layout_marginRight="@dimen/d_16"
+                    android:background="@drawable/bg_edit_bt"
+                    android:text="+Table"
+                    android:textColor="@color/colorWhite" />
+            </TableRow>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

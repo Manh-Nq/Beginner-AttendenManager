@@ -39,15 +39,23 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.ln_diem_danh) {
-            mCallBack.showFragment(M004ClassFrg.TAG);
-        } else if (v.getId() == R.id.ln_history) {
-            mCallBack.showFragment(M006ListClassFrg.TAG);
-        } else if (v.getId() == R.id.ln_attendance) {
-            mCallBack.showFragment(M002ProfileCompanyFrg.TAG);
-        } else if (v.getId() == R.id.iv_signout) {
-            showDialogSignOut();
+        switch (v.getId()) {
+            case R.id.ln_diem_danh:
+                mCallBack.showFragment(M004ClassFrg.TAG);
+                break;
+            case R.id.ln_history:
+                mCallBack.showFragment(M006ListClassFrg.TAG);
+                break;
+            case R.id.ln_attendance:
+                mCallBack.showFragment(M002ProfileCompanyFrg.TAG);
+                break;
+            case R.id.iv_signout:
+                showDialogSignOut();
+                break;
+            default:
+                break;
         }
+
     }
 
     private void showDialogSignOut() {
@@ -59,7 +67,7 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
             public void onClick(DialogInterface dialog, int which) {
                 FirebaseAuth.getInstance().signOut();
                 mCallBack.showFragment(M001LoginFrg.TAG);
-                CommonUtils.getInstance().saveAccount("","","");
+                CommonUtils.getInstance().saveAccount("", "", "");
                 dialog.dismiss();
             }
         });

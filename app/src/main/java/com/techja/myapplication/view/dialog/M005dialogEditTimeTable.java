@@ -56,7 +56,6 @@ public class M005dialogEditTimeTable extends BaseDialog<M005DialogEditTimeTableP
                 break;
             case R.id.tv_ok_edit_change_tb005:
                 saveToServer();
-
                 break;
 
         }

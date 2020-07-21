@@ -13,14 +13,15 @@ import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
 import com.techja.myapplication.model.TimeTableEntity;
 import com.techja.myapplication.presenter.M005TimeTablePresenter;
 import com.techja.myapplication.view.base.BaseFragment;
+import com.techja.myapplication.view.dialog.M005DialogMoreCoach;
 import com.techja.myapplication.view.dialog.M005DialogMoreTimeTable;
 import com.techja.myapplication.view.dialog.M005dialogEditTimeTable;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
 
-public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView{
+public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView {
     public static final String TAG = M005TimeTableFrg.class.getName();
     private LinearLayout lnTimetable;
-    private Button btEditTable;
+    private Button btEditTable, btMoreCoach;
     private String classCode;
     private TextView tvClassName;
     private ProgressBar progressBar;
@@ -46,7 +47,10 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         mPresenter.getClassTimetable(this.classCode);
         lnTimetable = findViewById(R.id.ln_time_table);
         lnTimetable.removeAllViews();
+
         btEditTable = findViewById(R.id.bt_more_table, this);
+        btMoreCoach = findViewById(R.id.bt_more_coach, this);
+
         tvClassName = findViewById(R.id.tv_class_name_005, App.getInstance().getBoldFont());
         tvClassName.setText(getStorage().getClassEntity().getClassName().toUpperCase());
     }
@@ -55,15 +59,33 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
     public void showPreviousFrg() {
         mCallBack.showFragment(M004ClassFrg.TAG);
 
+
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.bt_more_table) {
-            getStorage().setClassCode(this.classCode);
-            M005DialogMoreTimeTable dialog = new M005DialogMoreTimeTable(mContext, classCode);
-            dialog.show();
+        switch (v.getId()) {
+            case R.id.bt_more_table:
+                showDialogMoretimeTable();
+                break;
+            case R.id.bt_more_coach:
+                showDialogMoreCoach();
+                break;
         }
+
+    }
+
+    private void showDialogMoreCoach() {
+        getStorage().setClassCode(classCode);
+        M005DialogMoreCoach dialog = new M005DialogMoreCoach(mContext);
+        dialog.show();
+    }
+
+
+    private void showDialogMoretimeTable() {
+        getStorage().setClassCode(this.classCode);
+        M005DialogMoreTimeTable dialog = new M005DialogMoreTimeTable(mContext, classCode);
+        dialog.show();
     }
 
 
@@ -101,7 +123,9 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         tvTeacher.setText(teacher);
         tvNote.setText(note);
         tvNote.setTag(entity);
+
         item.findViewById(R.id.iv_edit).setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 TimeTableEntity data = (TimeTableEntity) tvNote.getTag();
@@ -114,7 +138,6 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         });
         lnTimetable.addView(item);
     }
-
 
 
 }

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar_morecoach"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/colorblue"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ln_frg_dialog_coach"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@color/colortvLogo1"
+        android:orientation="vertical"
+        android:padding="@dimen/d_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More Coach"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_30"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_20"
+            android:background="@color/colorWhite">
+
+
+            <EditText
+
+                android:id="@+id/edt_chucvu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="chức vụ"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_15">
+
+                <requestFocus />
+
+            </EditText>
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <EditText
+                android:id="@+id/edt_more_coach"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="coach"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_15">
+
+            </EditText>
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+
+            <EditText
+                android:id="@+id/edt_company"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="company"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_15">
+
+            </EditText>
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <EditText
+                android:id="@+id/edt_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:inputType="number"
+                android:hint="phonenumber"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_15">
+
+            </EditText>
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <EditText
+                android:id="@+id/edt_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="state"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_15">
+
+
+            </EditText>
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/d_10">
+
+            <TextView
+                android:id="@+id/tv_cancel_more_coach_005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_25" />
+
+            <TextView
+                android:id="@+id/tv_ok_more_coach_005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d_20"
+                android:layout_marginRight="@dimen/d_10"
+                android:text="OK"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/d_25" />
+        </TableRow>
+
+    </LinearLayout>
+</RelativeLayout>
