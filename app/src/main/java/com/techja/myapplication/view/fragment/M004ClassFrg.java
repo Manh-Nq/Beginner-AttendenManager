@@ -17,11 +17,13 @@ import com.techja.myapplication.view.adapter.ClassAdapter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M004MoreClassDialog;
 import com.techja.myapplication.view.event.OnM004ClassCallBack;
+import com.techja.myapplication.view.event.OnM004MoreClassCallBackToParent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCallBack> implements OnM004ClassCallbackToView, ClassAdapter.adapterListener {
+public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCallBack>
+        implements OnM004ClassCallbackToView, ClassAdapter.adapterListener, OnM004MoreClassCallBackToParent {
     public static final String TAG = M004ClassFrg.class.getName();
     private RecyclerView rvClass;
     private ClassAdapter adapter;
@@ -72,6 +74,7 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
 
     private void showDialogMoreClass() {
         M004MoreClassDialog dialog = new M004MoreClassDialog(mContext);
+        dialog.setOnCallBack(this);
         dialog.show();
     }
 
@@ -102,5 +105,16 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
             progressBar.setVisibility(View.GONE);
             lnFrg.setVisibility(View.VISIBLE);
         }
+    }
+
+    @Override
+    public void updateUIParent() {
+        mPresenter.getListClass();
+        initData();
+    }
+
+    @Override
+    public void showFragment(String tag) {
+
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:background="@color/colorBlack"
     android:paddingBottom="0.1dp">
 
@@ -11,6 +11,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
+        android:ellipsize="marquee"
         android:id="@+id/tv_day"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -27,6 +28,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
+        android:ellipsize="marquee"
         android:id="@+id/tv_time"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -43,6 +45,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
+        android:ellipsize="marquee"
         android:id="@+id/tv_detail"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -59,6 +62,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
+        android:ellipsize="marquee"
         android:id="@+id/tv_teacher"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -75,6 +79,7 @@
         android:background="@color/colorBlack" />
 
     <TextView
+        android:ellipsize="marquee"
         android:id="@+id/tv_note"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -91,7 +96,6 @@
         android:background="@color/colorBlack" />
 
     <ImageView
-
 
         android:id="@+id/iv_edit"
         android:layout_width="0dp"

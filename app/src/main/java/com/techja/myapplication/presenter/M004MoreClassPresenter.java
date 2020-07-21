@@ -22,11 +22,13 @@ public class M004MoreClassPresenter extends BasePresenter<OnM004MoreClassCallbac
         DocumentReference doc = FirebaseFirestore.getInstance().collection("class").document(classCode);
         DocumentReference doc1 = FirebaseFirestore.getInstance().collection("class").document(classCode)
                 .collection("info").document(className);
+        doc.set(entity);
         doc1.set(infoClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     mListener.showToast("update successfully");
+                    mListener.updateUI();
                 } else {
                     mListener.showToast("update fail");
                 }

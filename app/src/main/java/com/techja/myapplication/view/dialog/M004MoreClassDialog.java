@@ -125,4 +125,10 @@ public class M004MoreClassDialog extends BaseDialog<M004MoreClassPresenter, OnM0
 
         }
     }
+
+
+    @Override
+    public void updateUI() {
+        mCallBack.updateUIParent();
+    }
 }
