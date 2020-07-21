@@ -6,12 +6,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.techja.myapplication.callback.OnM005EditTimeTableCallBackToView;
+import com.techja.myapplication.callback.OnM005MoreTimeTableCallBackToView;
 import com.techja.myapplication.model.TimeTableEntity;
 
-public class M005EditTimeTablePresenter extends BasePresenter<OnM005EditTimeTableCallBackToView> {
+public class M005MoreTimeTablePresenter extends BasePresenter<OnM005MoreTimeTableCallBackToView> {
 
-    public M005EditTimeTablePresenter(OnM005EditTimeTableCallBackToView event) {
+    public M005MoreTimeTablePresenter(OnM005MoreTimeTableCallBackToView event) {
         super(event);
     }
 

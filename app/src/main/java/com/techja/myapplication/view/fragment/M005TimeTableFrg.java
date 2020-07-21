@@ -1,6 +1,5 @@
 package com.techja.myapplication.view.fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +13,8 @@ import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
 import com.techja.myapplication.model.TimeTableEntity;
 import com.techja.myapplication.presenter.M005TimeTablePresenter;
 import com.techja.myapplication.view.base.BaseFragment;
-import com.techja.myapplication.view.dialog.M005DialogEditTimeTable;
-import com.techja.myapplication.view.dialog.M005dialogChangeTimeTable;
-import com.techja.myapplication.view.event.OnM005DialogChangeTimeTableCallBackToParent;
+import com.techja.myapplication.view.dialog.M005DialogMoreTimeTable;
+import com.techja.myapplication.view.dialog.M005dialogEditTimeTable;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
 
 public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack> implements OnM005TimetableCallBackToView{
@@ -48,7 +46,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         mPresenter.getClassTimetable(this.classCode);
         lnTimetable = findViewById(R.id.ln_time_table);
         lnTimetable.removeAllViews();
-        btEditTable = findViewById(R.id.bt_edit_table, this);
+        btEditTable = findViewById(R.id.bt_more_table, this);
         tvClassName = findViewById(R.id.tv_class_name_005, App.getInstance().getBoldFont());
         tvClassName.setText(getStorage().getClassEntity().getClassName().toUpperCase());
     }
@@ -61,9 +59,9 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.bt_edit_table) {
+        if (v.getId() == R.id.bt_more_table) {
             getStorage().setClassCode(this.classCode);
-            M005DialogEditTimeTable dialog = new M005DialogEditTimeTable(mContext, classCode);
+            M005DialogMoreTimeTable dialog = new M005DialogMoreTimeTable(mContext, classCode);
             dialog.show();
         }
     }
@@ -109,7 +107,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
                 TimeTableEntity data = (TimeTableEntity) tvNote.getTag();
                 getStorage().setTimeTableEntity(data);
                 getStorage().setClassCode(classCode);
-                M005dialogChangeTimeTable dialog = new M005dialogChangeTimeTable(mContext);
+                M005dialogEditTimeTable dialog = new M005dialogEditTimeTable(mContext);
                 dialog.show();
 
             }

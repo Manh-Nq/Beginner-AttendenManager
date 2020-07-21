@@ -7,23 +7,23 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 
 import com.techja.myapplication.R;
-import com.techja.myapplication.callback.OnM005DialogChangeTimeTableCallBackToView;
+import com.techja.myapplication.callback.OnM005DialogEditTimeTableCallBackToView;
 import com.techja.myapplication.model.TimeTableEntity;
-import com.techja.myapplication.presenter.M005dialogChangeTimeTablePresenter;
+import com.techja.myapplication.presenter.M005DialogEditTimeTablePresenter;
 import com.techja.myapplication.view.base.BaseDialog;
-import com.techja.myapplication.view.event.OnM005DialogChangeTimeTableCallBackToParent;
+import com.techja.myapplication.view.event.OnM005DialogEditTimeTableCallBackToParent;
 
-public class M005dialogChangeTimeTable extends BaseDialog<M005dialogChangeTimeTablePresenter, OnM005DialogChangeTimeTableCallBackToParent> implements OnM005DialogChangeTimeTableCallBackToView {
+public class M005dialogEditTimeTable extends BaseDialog<M005DialogEditTimeTablePresenter, OnM005DialogEditTimeTableCallBackToParent> implements OnM005DialogEditTimeTableCallBackToView {
     private EditText edtDay, edtTime, edtDetail, edtTeacher, edtNote;
     private TimeTableEntity data;
 
-    public M005dialogChangeTimeTable(@NonNull Context context) {
+    public M005dialogEditTimeTable(@NonNull Context context) {
         super(context);
     }
 
     @Override
-    protected M005dialogChangeTimeTablePresenter getPresenter() {
-        return new M005dialogChangeTimeTablePresenter(this);
+    protected M005DialogEditTimeTablePresenter getPresenter() {
+        return new M005DialogEditTimeTablePresenter(this);
     }
 
     @Override

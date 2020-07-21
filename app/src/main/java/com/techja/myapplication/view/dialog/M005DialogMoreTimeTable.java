@@ -1,6 +1,5 @@
 package com.techja.myapplication.view.dialog;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
@@ -8,14 +7,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.techja.myapplication.App;
 import com.techja.myapplication.R;
-import com.techja.myapplication.callback.OnM005EditTimeTableCallBackToView;
-import com.techja.myapplication.presenter.M005EditTimeTablePresenter;
+import com.techja.myapplication.callback.OnM005MoreTimeTableCallBackToView;
+import com.techja.myapplication.presenter.M005MoreTimeTablePresenter;
 import com.techja.myapplication.view.base.BaseDialog;
-import com.techja.myapplication.view.event.OnM005EditTimeTableCallBackToParent;
+import com.techja.myapplication.view.event.OnM005MoreTimeTableCallBackToParent;
 
-public class M005DialogEditTimeTable extends BaseDialog<M005EditTimeTablePresenter, OnM005EditTimeTableCallBackToParent> implements OnM005EditTimeTableCallBackToView {
+public class M005DialogMoreTimeTable extends BaseDialog<M005MoreTimeTablePresenter, OnM005MoreTimeTableCallBackToParent> implements OnM005MoreTimeTableCallBackToView {
     private static final String KEY_LOADING = "KEY_LOADING";
     private TextView tvCancel, tvOk;
     private String classCode;
@@ -23,15 +21,15 @@ public class M005DialogEditTimeTable extends BaseDialog<M005EditTimeTablePresent
     private String day, time, detail, coach, note;
 
 
-    public M005DialogEditTimeTable(@NonNull Context context, String classCode) {
+    public M005DialogMoreTimeTable(@NonNull Context context, String classCode) {
         super(context);
         this.classCode = classCode;
 
     }
 
     @Override
-    protected M005EditTimeTablePresenter getPresenter() {
-        return new M005EditTimeTablePresenter(this);
+    protected M005MoreTimeTablePresenter getPresenter() {
+        return new M005MoreTimeTablePresenter(this);
     }
 
     @Override
