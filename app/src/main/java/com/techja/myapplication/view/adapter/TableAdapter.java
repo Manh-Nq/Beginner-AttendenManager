@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.model.TimeTableEntity;
 
@@ -61,6 +62,13 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableHolder>
             tvDetail = itemView.findViewById(R.id.tv_detail);
             tvTeacher = itemView.findViewById(R.id.tv_teacher);
             tvNote = itemView.findViewById(R.id.tv_note);
+
+            tvDay.setTypeface(App.getInstance().getRegularFont());
+            tvTime.setTypeface(App.getInstance().getRegularFont());
+            tvDetail.setTypeface(App.getInstance().getRegularFont());
+            tvTeacher.setTypeface(App.getInstance().getRegularFont());
+            tvNote.setTypeface(App.getInstance().getRegularFont());
+
             itemView.findViewById(R.id.iv_edit).setOnClickListener(this);
         }
 

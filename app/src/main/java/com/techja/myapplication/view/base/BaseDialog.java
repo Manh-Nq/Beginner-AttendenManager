@@ -2,6 +2,7 @@ package com.techja.myapplication.view.base;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -64,13 +65,23 @@ public abstract class BaseDialog<P extends BasePresenter, C extends OnActionCall
         return view;
     }
 
+    public <T extends View> T findViewById(int id, Typeface typeface) {
+        T view = findViewById(id);
+        if (view == null) {
+            return null;
+        }
+        if (view instanceof EditText)
+            ((EditText) view).setTypeface(typeface);
+        return view;
+    }
+
     public void showToast(String yourString) {
         if (mContext != null) {
             Toast.makeText(mContext, yourString, Toast.LENGTH_SHORT).show();
         }
     }
 
-    public StorageCommon getStorage(){
+    public StorageCommon getStorage() {
         return App.getStorage();
     }
 }

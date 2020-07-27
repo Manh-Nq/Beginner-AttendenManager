@@ -6,6 +6,7 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM005DialogEditTimeTableCallBackToView;
 import com.techja.myapplication.model.TimeTableEntity;
@@ -33,11 +34,11 @@ public class M005dialogEditTimeTable extends BaseDialog<M005DialogEditTimeTableP
         findViewById(R.id.tv_cancel_edit_change_tb005, this);
         findViewById(R.id.tv_ok_edit_change_tb005, this);
 
-        edtDay = findViewById(R.id.edt_day_dialog_change_tb005);
-        edtTime = findViewById(R.id.edt_time_dialog_change_tb005);
-        edtDetail = findViewById(R.id.edt_detail_dialog_change_tb005);
-        edtTeacher = findViewById(R.id.edt_coach_dialog_change_tb005);
-        edtNote = findViewById(R.id.edt_note_dialog_change_tb005);
+        edtDay = findViewById(R.id.edt_day_dialog_change_tb005, App.getInstance().getRegularFont());
+        edtTime = findViewById(R.id.edt_time_dialog_change_tb005,App.getInstance().getRegularFont());
+        edtDetail = findViewById(R.id.edt_detail_dialog_change_tb005,App.getInstance().getRegularFont());
+        edtTeacher = findViewById(R.id.edt_coach_dialog_change_tb005,App.getInstance().getRegularFont());
+        edtNote = findViewById(R.id.edt_note_dialog_change_tb005,App.getInstance().getRegularFont());
 
         edtDay.setText(data.getDay());
         edtTime.setText(data.getTime());

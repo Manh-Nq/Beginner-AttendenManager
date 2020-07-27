@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM005MoreTimeTableCallBackToView;
 import com.techja.myapplication.presenter.M005MoreTimeTablePresenter;
@@ -37,11 +38,11 @@ public class M005DialogMoreTimeTable extends BaseDialog<M005MoreTimeTablePresent
 
         tvCancel = findViewById(R.id.tv_cancel_edit_tb, this);
         tvOk = findViewById(R.id.tv_ok_edit_tb, this);
-        edtDay = findViewById(R.id.edt_day_dialog_005);
-        edtTime = findViewById(R.id.edt_time_dialog_005);
-        edtDetail = findViewById(R.id.edt_detail_dialog_005);
-        edtCoach = findViewById(R.id.edt_coach_dialog_005);
-        edtNote = findViewById(R.id.edt_note_dialog_005);
+        edtDay = findViewById(R.id.edt_day_dialog_005, App.getInstance().getRegularFont());
+        edtTime = findViewById(R.id.edt_time_dialog_005,App.getInstance().getRegularFont());
+        edtDetail = findViewById(R.id.edt_detail_dialog_005,App.getInstance().getRegularFont());
+        edtCoach = findViewById(R.id.edt_coach_dialog_005,App.getInstance().getRegularFont());
+        edtNote = findViewById(R.id.edt_note_dialog_005,App.getInstance().getRegularFont());
 
     }
 
