@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ProgressBar
         android:id="@+id/progress_load_data"
@@ -154,17 +155,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/ln_time_table"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_time_table"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_day"
                     android:layout_marginHorizontal="@dimen/d_16"
                     android:orientation="vertical">
 
-                    <include layout="@layout/item_day" />
 
 
-                </LinearLayout>
+                </androidx.recyclerview.widget.RecyclerView>
             </ScrollView>
 
             <TableRow

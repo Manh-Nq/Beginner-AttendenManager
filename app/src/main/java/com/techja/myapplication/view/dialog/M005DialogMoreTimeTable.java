@@ -108,4 +108,9 @@ public class M005DialogMoreTimeTable extends BaseDialog<M005MoreTimeTablePresent
     protected int getLayoutId() {
         return R.layout.dialog_edit_time_table;
     }
+
+    @Override
+    public void uploadDone() {
+        mCallBack.uploadMoreTimeTableDone();
+    }
 }

@@ -26,11 +26,10 @@ public class M005DialogEditTimeTablePresenter extends BasePresenter<OnM005Dialog
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         mListener.showToast("upload edit time table to server success fully");
+                        mListener.loadDone();
                     } else {
                         mListener.showToast("upload edit time table to server fail");
                     }
-
-
                 }
             });
         } catch (Exception e) {

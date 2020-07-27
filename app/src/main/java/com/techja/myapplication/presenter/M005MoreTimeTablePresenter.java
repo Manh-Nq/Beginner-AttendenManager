@@ -29,6 +29,7 @@ public class M005MoreTimeTablePresenter extends BasePresenter<OnM005MoreTimeTabl
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         mListener.showToast("upload time table success fully");
+                        mListener.uploadDone();
                     } else {
                         mListener.showToast("upload time table fail");
                     }

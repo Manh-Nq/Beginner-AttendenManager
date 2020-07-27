@@ -4,13 +4,14 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
-import com.techja.myapplication.utils.MTask;
+import com.techja.myapplication.model.TimeTableEntity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class M005TimeTablePresenter extends BasePresenter<OnM005TimetableCallBackToView> {
@@ -34,13 +35,15 @@ public class M005TimeTablePresenter extends BasePresenter<OnM005TimetableCallBac
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
+                        List<TimeTableEntity> listData = new ArrayList<>();
                         if (task.isSuccessful()) {
                             task.getResult().size();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> data = document.getData();
-                                mListener.addTimetable((String) data.get("day"), (String) data.get("time"), (String) data.get("detail"), (String) data.get("teacher"), (String) data.get("note"));
+                                listData.add(new TimeTableEntity((String) data.get("day"), (String) data.get("time"), (String) data.get("detail"), (String) data.get("teacher"), (String) data.get("note")));
+//                                mListener.addTimetable((String) data.get("day"), (String) data.get("time"), (String) data.get("detail"), (String) data.get("teacher"), (String) data.get("note"));
                             }
+                            mListener.loadDone(listData);
                         }
                         mListener.showProgressBar(false);
                     }

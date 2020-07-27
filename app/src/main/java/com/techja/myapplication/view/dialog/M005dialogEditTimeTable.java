@@ -113,5 +113,8 @@ public class M005dialogEditTimeTable extends BaseDialog<M005DialogEditTimeTableP
     }
 
 
-
+    @Override
+    public void loadDone() {
+        mCallBack.editDoneLoadToServer();
+    }
 }
