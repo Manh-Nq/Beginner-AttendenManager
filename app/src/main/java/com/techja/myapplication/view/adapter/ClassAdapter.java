@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,7 +48,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
 
     public class ClassHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvClassName, tvClassCode;
-        Button btTimetable;
+        ImageView ivEdit;
+
 
         public ClassHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,7 +57,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
             tvClassCode.setTypeface(App.getInstance().getRegularFont());
             tvClassName = itemView.findViewById(R.id.tv_name_class_m004);
             tvClassName.setTypeface(App.getInstance().getRegularFont());
-
+            ivEdit = itemView.findViewById(R.id.iv_edit_class);
+            ivEdit.setOnClickListener(this);
             tvClassName.setOnClickListener(this);
             tvClassCode.setOnClickListener(this);
 
@@ -68,6 +70,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
             ClassEntity entity = (ClassEntity) tvClassCode.getTag();
             if (v.getId() == R.id.tv_name_class_m004 || v.getId() == R.id.tv_class_code_m004) {
                 callBack.clickButtonTimetable(entity);
+            } else if (v.getId() == R.id.iv_edit_class) {
+                callBack.showDiaLogEditClass(entity);
             }
         }
     }
@@ -80,6 +84,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
 
     public interface adapterListener {
 
+        void showDiaLogEditClass(ClassEntity entity);
 
         void clickButtonTimetable(ClassEntity data);
 

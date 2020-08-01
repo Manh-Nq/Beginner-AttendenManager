@@ -81,6 +81,7 @@ public abstract class BaseDialog<P extends BasePresenter, C extends OnActionCall
         }
     }
 
+
     public StorageCommon getStorage() {
         return App.getStorage();
     }

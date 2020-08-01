@@ -31,15 +31,15 @@ public class M004ClassPresenter extends BasePresenter<OnM004ClassCallbackToView>
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
+                        List<ClassEntity> listData = new ArrayList<>();
                         if (task.isSuccessful()) {
                             task.getResult().size();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> data = document.getData();
+                                listData.add(new ClassEntity((String) data.get("className"), (String) data.get("classCode")));
 
-                                getStorage().addClass((String) data.get("className"), (String) data.get("classCode"));
-                                mListener.updateData();
                             }
+                            mListener.updateData(listData);
 
                         }
                         mListener.showProgressBar(false);

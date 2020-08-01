@@ -2,7 +2,10 @@ package com.techja.myapplication.view.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -13,6 +16,7 @@ import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM007ListStudentCallBackToView;
 import com.techja.myapplication.model.StudentEntity;
 import com.techja.myapplication.presenter.M007ListStudentPresenter;
+import com.techja.myapplication.utils.CommonUtils;
 import com.techja.myapplication.view.adapter.StudentAdapter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M007DialogCallPhone;
@@ -28,6 +32,7 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     private StudentAdapter adapter;
     private List<StudentEntity> listData;
     private List<StudentEntity> listTmp;
+    private List<StudentEntity> tmp;
     private LinearLayout lnFrg;
     private ProgressBar progressBar;
 
@@ -44,15 +49,16 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
     @Override
     protected void initViews() {
-
         progressBar = findViewById(R.id.progress_bar_007);
         lnFrg = findViewById(R.id.ln_frg_007);
         rvStudent = findViewById(R.id.rv_class_007);
         mPresenter.getUserInfoStudent();
         listTmp = getStorage().getListStudent();
-
         rvStudent.setLayoutManager(new LinearLayoutManager(mContext));
+        this.tmp = listTmp;
+
     }
+
 
     private void initData(List<StudentEntity> listTmp) {
         String classCode = getStorage().getClassCode();
@@ -95,7 +101,7 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
     @Override
     public void callPhoneForStudent(String phone) {
-        if (phone.isEmpty()|| phone == null) return;
+        if (phone.isEmpty() || phone == null) return;
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + phone));

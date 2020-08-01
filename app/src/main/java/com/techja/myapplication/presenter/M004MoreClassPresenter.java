@@ -18,7 +18,7 @@ public class M004MoreClassPresenter extends BasePresenter<OnM004MoreClassCallbac
     public void setClass(String className, String classCode, String coach, String des, String duration, String modul, String supporter) {
         mListener.showProgressBar(true);
         ClassEntity entity = new ClassEntity(className, classCode);
-        InfoClassEntity infoClass = new InfoClassEntity(className, coach, des, duration, modul, supporter);
+        InfoClassEntity infoClass = new InfoClassEntity(coach, className, des, duration, modul, supporter);
         DocumentReference doc = FirebaseFirestore.getInstance().collection("class").document(classCode);
         DocumentReference doc1 = FirebaseFirestore.getInstance().collection("class").document(classCode)
                 .collection("info").document(className);

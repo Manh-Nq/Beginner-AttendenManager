@@ -8,9 +8,12 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.techja.myapplication.App;
+import com.techja.myapplication.model.StudentEntity;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class CommonUtils {
@@ -22,6 +25,7 @@ public class CommonUtils {
     private static final String KEY_EMAIL = "KEY_USER_NAME";
     private static final String KEY_PASSWORD = "KEY_PASSWORD";
     private static final String KEY_ADMIN = "KEY_ADMIN";
+    private List<StudentEntity> tmp = new ArrayList<>();
     private static final Object[][] PHONE_NUMBER = new Object[][]{
             new Object[]{"090", 10}, new Object[]{"093", 10}, new Object[]{"070", 10},
             new Object[]{"071", 10}, new Object[]{"072", 10}, new Object[]{"076", 10},
@@ -78,6 +82,7 @@ public class CommonUtils {
         SimpleDateFormat df = new SimpleDateFormat(dateFormat, Locale.US);
         return df.format(new Date());
     }
+
     public static boolean isPhone(String phone) {
         for (Object[] item : PHONE_NUMBER) {
             String prefix = (String) item[0];
@@ -89,7 +94,7 @@ public class CommonUtils {
         return false;
     }
 
-    public void saveAccount(String email, String password,String codeAdmin) {
+    public void saveAccount(String email, String password, String codeAdmin) {
         SharedPreferences sharedPref = App.getInstance().getSharedPreferences(SAVE_USER_NAME_PASS, Context.MODE_PRIVATE);
         editor = sharedPref.edit();
         editor.putString(KEY_EMAIL, email);
@@ -116,6 +121,7 @@ public class CommonUtils {
             context.startActivity(intent);
         }
     }
+
 
 
 }

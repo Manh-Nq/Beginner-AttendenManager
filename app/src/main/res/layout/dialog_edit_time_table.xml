@@ -3,7 +3,7 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/colortvLogo1"
+    android:background="@color/colorGreenAlpha"
     android:orientation="vertical"
     android:padding="@dimen/d_16">
 
@@ -35,6 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:maxLines="1"
             android:gravity="center"
             android:hint="định dạng Monday->Mon"
             android:textColor="@color/colorBlack"
@@ -63,6 +64,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/edt_time_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -71,7 +73,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -92,6 +93,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/edt_detail_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -100,7 +102,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -121,6 +122,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/edt_coach_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -129,7 +131,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -150,6 +151,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/edt_note_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -158,7 +160,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 

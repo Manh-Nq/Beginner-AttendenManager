@@ -55,4 +55,14 @@ public class StudentEntity {
         }
         return super.equals(obj);
     }
+
+    @Override
+    public String toString() {
+        return "StudentEntity{" +
+                "name='" + name + '\'' +
+                ", className='" + className + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }
