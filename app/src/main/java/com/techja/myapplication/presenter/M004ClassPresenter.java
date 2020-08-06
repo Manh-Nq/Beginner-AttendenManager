@@ -1,6 +1,8 @@
 package com.techja.myapplication.presenter;
 
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,6 +42,7 @@ public class M004ClassPresenter extends BasePresenter<OnM004ClassCallbackToView>
 
                             }
                             mListener.updateData(listData);
+                            Log.d("TAG", "onComplete009: "+listData.size());
 
                         }
                         mListener.showProgressBar(false);

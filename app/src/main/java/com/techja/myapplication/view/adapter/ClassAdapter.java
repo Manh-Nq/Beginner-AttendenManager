@@ -59,8 +59,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
             tvClassName.setTypeface(App.getInstance().getRegularFont());
             ivEdit = itemView.findViewById(R.id.iv_edit_class);
             ivEdit.setOnClickListener(this);
-            tvClassName.setOnClickListener(this);
-            tvClassCode.setOnClickListener(this);
+            itemView.findViewById(R.id.ln_class_code).setOnClickListener(this);
+            itemView.findViewById(R.id.ln_class_name).setOnClickListener(this);
 
         }
 
@@ -68,7 +68,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         @Override
         public void onClick(View v) {
             ClassEntity entity = (ClassEntity) tvClassCode.getTag();
-            if (v.getId() == R.id.tv_name_class_m004 || v.getId() == R.id.tv_class_code_m004) {
+            if (v.getId() == R.id.ln_class_name || v.getId() == R.id.ln_class_code) {
                 callBack.clickButtonTimetable(entity);
             } else if (v.getId() == R.id.iv_edit_class) {
                 callBack.showDiaLogEditClass(entity);

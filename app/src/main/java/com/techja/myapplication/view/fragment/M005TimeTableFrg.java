@@ -59,6 +59,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         mPresenter.getClassTimetable(this.classCode);
         rvTimetable = findViewById(R.id.rv_time_table);
 
+        findViewById(R.id.iv_back,this);
         btEditTable = findViewById(R.id.bt_more_table, this);
         btMoreCoach = findViewById(R.id.bt_more_coach, this);
 
@@ -84,6 +85,9 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
                 break;
             case R.id.bt_more_coach:
                 showDialogMoreCoach();
+                break;
+                case R.id.iv_back:
+                mCallBack.showFragment(M004ClassFrg.TAG);
                 break;
         }
 

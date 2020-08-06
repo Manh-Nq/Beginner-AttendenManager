@@ -33,6 +33,7 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
     protected void initViews() {
         progressBar = findViewById(R.id.progress_008);
         lnFrg = findViewById(R.id.ln_frg_008);
+        findViewById(R.id.iv_back,this);
         try {
             String classCode = getStorage().getStudentEntity().getClassName();
             String email = getStorage().getStudentEntity().getEmail();
@@ -57,11 +58,13 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
 
             View itemView = LayoutInflater.from(mContext)
                     .inflate(R.layout.item_attendance, null);
-            TextView tvDay = itemView.findViewById(R.id.tv_day_008);
-            TextView tvTime = itemView.findViewById(R.id.tv_time_008);
-            TextView tvState = itemView.findViewById(R.id.tv_state_008);
+            TextView tvDay = itemView.findViewById(R.id.tv_day);
+            TextView tvTime = itemView.findViewById(R.id.tv_time);
+            TextView tvToDay = itemView.findViewById(R.id.tv_today);
+            TextView tvState = itemView.findViewById(R.id.tv_state);
 
-            tvDay.setText(day);
+            tvDay.setText(day.substring(0, day.indexOf("/")));
+            tvToDay.setText(day.substring(day.indexOf("/")+1,day.length()));
             tvTime.setText(time);
             tvState.setText(state);
             if (state.equals("late")) {
@@ -73,6 +76,13 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
             lnHistory.addView(itemView);
         } catch (Exception e) {
 
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.iv_back){
+            mCallBack.showFragment(M007ListStudentFrg.TAG);
         }
     }
 

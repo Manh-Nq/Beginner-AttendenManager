@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="d_15">15dp</dimen>
+    <dimen name="d_44">44dp</dimen>
+    <dimen name="d_12">12dp</dimen>
 </resources>

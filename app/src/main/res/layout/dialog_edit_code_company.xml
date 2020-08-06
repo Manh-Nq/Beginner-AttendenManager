@@ -3,7 +3,6 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/colorGreenAlpha"
     android:orientation="vertical"
     android:padding="@dimen/d_16">
 
@@ -24,7 +23,7 @@
             android:layout_width="@dimen/d_50"
             android:layout_height="50dp"
             android:padding="@dimen/d_13"
-            android:src="@drawable/ic_qr2" />
+            android:src="@drawable/ic_command_1" />
 
         <EditText
 
@@ -54,7 +53,7 @@
             android:layout_height="50dp"
             android:padding="@dimen/d_13"
             android:src="@drawable/ic_location"
-            android:tint="@color/colorRed" />
+            android:tint="@color/colorViolet" />
 
         <EditText
 
@@ -84,7 +83,7 @@
             android:layout_height="50dp"
             android:padding="@dimen/d_13"
             android:src="@drawable/ic_location"
-            android:tint="@color/colorRed" />
+            android:tint="@color/colorViolet" />
 
         <EditText
 
@@ -113,7 +112,8 @@
             android:layout_width="@dimen/d_50"
             android:layout_height="50dp"
             android:padding="@dimen/d_13"
-            android:src="@drawable/ic_size" />
+            android:src="@drawable/ic_range"
+            android:tint="@color/colorViolet"/>
 
         <EditText
             android:id="@+id/edt_range_002"

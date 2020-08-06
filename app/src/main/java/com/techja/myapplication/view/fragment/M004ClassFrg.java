@@ -9,12 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.techja.myapplication.R;
@@ -62,8 +62,8 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
         btEdit = findViewById(R.id.bt_more_m004, this);
         mPresenter.getListClass();
         rvClass = rootView.findViewById(R.id.rv_class);
-        rvClass.setLayoutManager(new LinearLayoutManager(mContext));
-
+        rvClass.setLayoutManager(new GridLayoutManager(mContext,1));
+        findViewById(R.id.iv_back, this);
 
     }
 
@@ -81,6 +81,8 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
     public void onClick(View v) {
         if (v.getId() == R.id.bt_more_m004) {
             showDialogMoreClass();
+        } else if (v.getId() == R.id.iv_back) {
+            mCallBack.showFragment(M003MenuFrg.TAG);
         }
     }
 
@@ -153,10 +155,10 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
                 doc.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             showToast("delete success");
                             mPresenter.getListClass();
-                        }else{
+                        } else {
                             showToast("delete fail");
                         }
                     }

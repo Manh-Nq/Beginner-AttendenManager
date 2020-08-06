@@ -30,7 +30,7 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
 
     @Override
     protected void initViews() {
-        ivSignout = findViewById(R.id.iv_signout, this);
+        ivSignout = findViewById(R.id.iv_sign_out, this);
         findViewById(R.id.ln_diem_danh, this);
         findViewById(R.id.ln_history, this);
         findViewById(R.id.ln_attendance, this);
@@ -49,7 +49,7 @@ public class M003MenuFrg extends BaseFragment<M003MenuPresenter, OnM003MenuCallB
             case R.id.ln_attendance:
                 mCallBack.showFragment(M002ProfileCompanyFrg.TAG);
                 break;
-            case R.id.iv_signout:
+            case R.id.iv_sign_out:
                 showDialogSignOut();
                 break;
             default:

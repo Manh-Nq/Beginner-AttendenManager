@@ -26,8 +26,7 @@
             android:gravity="center"
             android:text="Name"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+            android:textSize="@dimen/d_20" />
 
         <TextView
             android:id="@+id/tv_classname_004"
@@ -36,7 +35,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
             <requestFocus />
@@ -59,7 +58,7 @@
             android:text="Code"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+             />
 
         <TextView
             android:id="@+id/tv_classCode_004"
@@ -67,7 +66,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:maxLines="1"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
         </TextView>
@@ -86,9 +85,9 @@
             android:layout_height="wrap_content"
 
             android:layout_marginRight="@dimen/d_10"
-            android:background="@drawable/bg_delete_dialog"
+            android:background="@drawable/bg_time_history_late"
             android:text="Delete"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorRed"
             android:textSize="@dimen/d_25" />
 
         <TextView

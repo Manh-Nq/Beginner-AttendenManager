@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#307A45</color>
-    <color name="colorAccent">#4E4E4E</color>
-    <color name="colorBlack">#000000</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#9AD2FD</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorGreen">#38C2BB</color>
-    <color name="colorGray">#BAECED</color>
-    <color name="colorRed">#F44336</color>
-    <color name="colorRedAlpha">#F0564B</color>
-    <color name="colorWhiteAlpha">#FFFDFB</color>
-    <color name="colorLightGray">#E9E9F0</color>
-    <color name="colorLightGreen">#1BFFAF</color>
-    <color name="colorDarkGray">#33ABCE</color>
-    <color name="colorDarkGreen">#386F24</color>
-    <color name="colorblue">#241F21</color>
-    <color name="colorGreenAlpha">#0047D987</color>
-    <color name="colortvLogo">#F66636</color>
-    <color name="colortvLogo1">#C3FAE5DB</color>
+    <color name="colorGray">#F3F3F3</color>
+    <color name="colorGrayDark">#7B7A80</color>
+    <color name="colorBlack">#4D4D4D</color>
+    <color name="colorblack">#000000</color>
+    <color name="colorViolet">#5844DB</color>
+    <color name="colorRed">#FD6D44</color>
+    <color name="colorred">#D90D17</color>
+    <color name="colorVioletAlpha">#F5F3FD</color>
+    <color name="colorRedAlpha">#FFF0F0</color>
+    <color name="colorBlue">#4E62ED</color>
+    <color name="colorGreen">#8BFF7F</color>
 </resources>

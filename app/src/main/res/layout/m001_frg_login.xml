@@ -2,123 +2,141 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhiteAlpha">
-
+    android:background="@color/colorWhite">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/d_56">
+        android:paddingTop="56dp">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/tv001"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Sign In"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/d_20"
+                android:textStyle="normal" />
 
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/d_10"
-                android:src="@drawable/ic_logo_company" />
 
             <TextView
+                android:id="@+id/tv002"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="the best android training organization " />
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/d_16"
+                android:layout_marginTop="@dimen/d_30"
+                android:text="Tech Ja"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/d_20"
+                android:textStyle="bold" />
 
-            <TableRow
+            <TextView
+                android:id="@+id/tv003"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/d_16"
+                android:text="The best android training organization "
+                android:textSize="@dimen/d_12" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="44dp"
                 android:layout_marginHorizontal="@dimen/d_16"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/bg_edt">
+                android:layout_marginTop="40dp">
 
                 <EditText
                     android:id="@+id/edt_email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/bg_focus_edt"
                     android:hint="Email"
                     android:maxLength="50"
                     android:paddingHorizontal="@dimen/d_10"
-                    android:singleLine="true">
+                    android:singleLine="true"
+                    android:textSize="@dimen/d_14" />
 
-                    <requestFocus />
-                </EditText>
-            </TableRow>
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/d_10"
+                    android:src="@drawable/ic_delete"
+                    android:tint="@color/colorblack"
+                    android:visibility="gone" />
 
-            <TableRow
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="44dp"
                 android:layout_marginHorizontal="@dimen/d_16"
-                android:layout_marginTop="@dimen/d_10"
-                android:background="@drawable/bg_edt">
+                android:layout_marginTop="@dimen/d_10">
 
                 <EditText
                     android:id="@+id/edt_password"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginRight="@dimen/d_10"
-                    android:layout_weight="1"
+                    android:background="@drawable/bg_focus_edt"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLength="50"
                     android:paddingHorizontal="@dimen/d_10"
-                    android:singleLine="true">
-
-                    <requestFocus />
-                </EditText>
+                    android:singleLine="true"
+                    android:textSize="@dimen/d_14" />
 
                 <ImageView
                     android:id="@+id/iv_show_pass"
                     android:layout_width="wrap_content"
-                    android:layout_height="36dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="@dimen/d_10"
                     android:src="@drawable/bg_show_password" />
 
-            </TableRow>
+            </RelativeLayout>
 
-            <TableRow
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="44dp"
                 android:layout_marginHorizontal="@dimen/d_16"
-                android:background="@drawable/bg_edt">
+                android:layout_marginTop="@dimen/d_10">
 
                 <EditText
                     android:id="@+id/edt_code_admin"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="code admin"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_focus_edt"
+                    android:hint="Code admin"
+                    android:inputType="textPassword"
                     android:maxLength="50"
                     android:paddingHorizontal="@dimen/d_10"
-                    android:singleLine="true">
+                    android:singleLine="true"
+                    android:textSize="@dimen/d_14" />
 
-                    <requestFocus />
-                </EditText>
-            </TableRow>
+            </RelativeLayout>
 
-            <TableRow
-                android:layout_width="match_parent"
+
+            <CheckBox
+                android:id="@+id/cb_save_account"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/d_16"
-                android:layout_marginTop="@dimen/d_16">
-
-                <CheckBox
-                    android:id="@+id/cb_save_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/d_10"
-                    android:text="Save your account"
-                    android:textSize="@dimen/d_16" />
-            </TableRow>
+                android:layout_marginLeft="@dimen/d_16"
+                android:layout_marginTop="@dimen/d_16"
+                android:buttonTint="@color/colorViolet"
+                android:checked="true"
+                android:text="Save your account"
+                android:textColor="@color/colorBlack" />
 
 
             <Button
@@ -127,31 +145,22 @@
                 android:layout_height="@dimen/d_50"
                 android:layout_marginHorizontal="@dimen/d_16"
                 android:layout_marginTop="@dimen/d40"
-                android:background="@drawable/bg_green_bt"
-                android:text="Login"
-                android:textColor="@color/colorWhiteAlpha"
-                android:textSize="@dimen/d_20"
-                android:fontFamily="sans-serif-condensed"/>
-
-            <TextView
-                android:id="@+id/tv_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/d_16"
-                android:text="Do not have an account, click here"
-                android:textSize="@dimen/d_16" />
-
+                android:background="@drawable/bg_violet_bt"
+                android:fontFamily="sans-serif-black"
+                android:text="Sign in"
+                android:textColor="@color/colorWhite"
+                android:textSize="18dp" />
 
         </LinearLayout>
     </ScrollView>
 
     <ProgressBar
         android:id="@+id/progress_bar"
-        android:layout_width="@dimen/d_86"
-        android:layout_height="@dimen/d_86"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
+        android:progressTint="@color/colorViolet"
         android:visibility="gone" />
 
 </RelativeLayout>

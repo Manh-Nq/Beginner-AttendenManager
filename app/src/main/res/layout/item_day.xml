@@ -1,117 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="@color/colorBlack"
-    android:paddingBottom="0.1dp">
+    android:layout_height="wrap_content"
+    android:layout_weight="3"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_weight="3"
+        android:background="@drawable/bg_item_day"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_weight="3"
+            android:background="@drawable/bg_item_day"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/d_30"
+                    android:layout_marginLeft="@dimen/d_16"
+                    android:background="@drawable/bg_day"
+                    android:gravity="center"
+                    android:text="Mon"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/d_16" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_16"
+                    android:gravity="center"
+                    android:text="17:30"
+                    android:textColor="@color/colorViolet"
+                    android:textSize="@dimen/d_20" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d_5">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_16"
+                    android:gravity="center_vertical"
+                    android:text="Teacher:"
+                    android:textColor="@color/colorGrayDark"
+                    android:textSize="@dimen/d_16" />
+
+                <TextView
+                    android:id="@+id/tv_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_16"
+                    android:gravity="center"
+
+                    android:text="name giảng viên"
+                    android:textColor="@color/colorblack"
+                    android:textSize="@dimen/d_16" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d_16"
+                android:layout_marginTop="@dimen/d_5">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Lesson"
+                    android:textColor="@color/colorGrayDark"
+                    android:textSize="@dimen/d_16" />
+
+                <TextView
+
+                    android:id="@+id/tv_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/d_16"
+                    android:ellipsize="marquee"
+                    android:gravity="left"
+                    android:text="detail"
+                    android:textColor="@color/colorblack"
+                    android:textSize="@dimen/d_16" />
+            </TableRow>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="@dimen/d_30"
+            android:tint="@color/colorViolet"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_edit_2" />
+
+    </LinearLayout>
 
     <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <TextView
-        android:ellipsize="marquee"
-        android:id="@+id/tv_day"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="Thứ 5"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_20" />
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <TextView
-        android:ellipsize="marquee"
-        android:id="@+id/tv_time"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="17:30"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_20" />
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <TextView
-        android:ellipsize="marquee"
-        android:id="@+id/tv_detail"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="detail"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_16" />
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <TextView
-        android:ellipsize="marquee"
-        android:id="@+id/tv_teacher"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="name giảng viên"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_16" />
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <TextView
-        android:ellipsize="marquee"
-        android:id="@+id/tv_note"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="ghi chú"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_16" />
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <ImageView
-
-        android:id="@+id/iv_edit"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:src="@drawable/ic_pen"
-        android:text="ghi chú"
-        android:textSize="@dimen/d_16"
-        android:tint="@color/colortvLogo" />
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-
-</TableRow>
+        android:layout_marginTop="@dimen/d_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_16"
+        android:background="@color/colorWhite" />
+</LinearLayout>

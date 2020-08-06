@@ -1,102 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
-    android:orientation="vertical"
-    android:background="@color/colorGreen"
-    android:weightSum="3">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
     <TableRow
-        android:id="@+id/tb_item_student_007"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:weightSum="4"
-        android:background="@color/colorBlack"
+        android:layout_height="@dimen/d_44"
         android:orientation="vertical"
-        android:padding="0.1dp">
+        android:weightSum="4">
 
         <TextView
-            android:id="@+id/tv_name_hs_007"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:background="@color/colorWhite"
-            android:gravity="center"
-            android:text="Ngô Mạnh "
+            android:gravity="center_vertical"
+            android:text="Your name :"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16" />
 
-        <View
-            android:layout_width="0.1dp"
+        <TextView
+            android:id="@+id/tv_name_hs_007"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorBlack" />
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:text="Ngô Mạnh "
+            android:textColor="@color/colorBlue"
+
+            android:textSize="@dimen/d_16" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_44"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:text="Class: "
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16" />
 
         <TextView
 
             android:id="@+id/tv_class_name_007"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:background="@color/colorWhite"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:text="techja k2"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16" />
+    </TableRow>
 
-        <View
-            android:layout_width="0.1dp"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlack" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_44"
+        android:orientation="vertical"
+        android:weightSum="4">
+
         <TextView
-
-            android:id="@+id/tv_email_007"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:background="@color/colorWhite"
-            android:gravity="center"
-            android:text="mail"
+            android:gravity="center_vertical"
+            android:text="Email : "
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16" />
 
-        <View
-            android:layout_width="0.1dp"
+        <TextView
+            android:id="@+id/tv_email_007"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorBlack" />
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:text="mail"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/d_16" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_44"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:text="Phone : "
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_16" />
 
         <LinearLayout
-            android:id="@+id/ln_phone_007"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/d_44"
+android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
+            <TextView
+                android:id="@+id/tv_phone_007"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-            android:id="@+id/tv_phone_007"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/colorWhite"
-            android:gravity="center"
-            android:text="phone"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_10" />
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:text="phone"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/d_14" />
 
-        <ImageView
-
-            android:layout_width="match_parent"
-            android:background="@color/colorWhiteAlpha"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_phone" />
-
+            <View
+                android:layout_marginTop="@dimen/d_5"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/colorBlue" />
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/iv_phone_007"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:src="@drawable/ic_phone" />
     </TableRow>
+    <View
+        android:layout_marginTop="@dimen/d_10"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorViolet" />
 
 
 </LinearLayout>

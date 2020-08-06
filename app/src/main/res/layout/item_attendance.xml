@@ -1,50 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/d_50"
-    android:background="@color/colorBlack"
-    android:padding="1dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/d_25"
+    android:background="@color/colorWhite">
 
-    <TextView
-        android:id="@+id/tv_day_008"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="Thứ 5"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_20" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:text="Monday"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_14" />
+
+        <TextView
+            android:id="@+id/tv_today"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:text="22/2/1997"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_14" />
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:text="17:30"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_14" />
+
+        <View
+            android:layout_width="@dimen/d_30"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="64dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_time_history_ontime"
+            android:gravity="center"
+            android:text="late"
+            android:textColor="@color/colorred"
+            android:textSize="@dimen/d_14" />
+    </TableRow>
     <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
+        android:layout_marginTop="@dimen/d_5"
+        android:layout_marginLeft="@dimen/d_20"
+        android:layout_marginRight="@dimen/d_20"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorVioletAlpha"/>
 
-    <TextView
-        android:id="@+id/tv_time_008"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="17:30"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_20" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack" />
-
-    <TextView
-        android:id="@+id/tv_state_008"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorWhite"
-        android:gravity="center"
-        android:text="late"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/d_20" />
 </LinearLayout>

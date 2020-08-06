@@ -28,7 +28,7 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
 
     @Override
     protected int getLayoutId() {
-        return R.layout.m002_frg_profile_company;
+        return R.layout.m002_frg_profile;
     }
 
     @Override
@@ -40,6 +40,7 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
         tvRange = findViewById(R.id.tv_range, App.getInstance().getRegularFont());
         mPresenter.getInfoCode(new String[]{"codeDD", "latitude", "longitude", "maxdistance"});
 
+        findViewById(R.id.iv_back,this);
 
     }
 
@@ -55,6 +56,8 @@ public class M002ProfileCompanyFrg extends BaseFragment<M002ProfileCompanyPresen
             getStorage().setCompanyEntity(entity);
             M002ChangeCodeDialog dialog = new M002ChangeCodeDialog(mContext);
             dialog.show();
+        }else if(v.getId()==R.id.iv_back){
+            mCallBack.showFragment(M003MenuFrg.TAG);
         }
     }
 

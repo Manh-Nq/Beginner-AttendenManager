@@ -3,7 +3,6 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/colorGreenAlpha"
     android:orientation="vertical"
     android:padding="@dimen/d_16">
 
@@ -21,14 +20,14 @@
         android:background="@color/colorWhite">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/d_56"
             android:layout_height="50dp"
             android:layout_marginLeft="@dimen/d_10"
             android:gravity="center"
             android:text="Day"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+        />
 
         <EditText
             android:maxLines="1"
@@ -51,14 +50,14 @@
         android:background="@color/colorWhite">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/d_56"
             android:layout_height="50dp"
             android:layout_marginLeft="@dimen/d_10"
             android:gravity="center"
             android:text="time"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+        />
 
 
         <EditText
@@ -71,7 +70,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -82,14 +80,13 @@
         android:background="@color/colorWhite">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/d_56"
             android:layout_height="50dp"
             android:layout_marginLeft="@dimen/d_10"
             android:gravity="center"
             android:text="Detail"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+            android:textSize="@dimen/d_20" />
 
         <EditText
             android:maxLines="1"
@@ -101,7 +98,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -119,7 +115,7 @@
             android:text="Coach"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+          />
 
         <EditText
             android:maxLines="1"
@@ -131,7 +127,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -142,14 +137,14 @@
         android:background="@color/colorWhite">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/d_56"
             android:layout_height="50dp"
             android:layout_marginLeft="@dimen/d_10"
             android:gravity="center"
             android:text="Note"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+         />
 
         <EditText
             android:maxLines="1"
@@ -161,7 +156,6 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_16">
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
@@ -186,7 +180,7 @@
             android:layout_height="wrap_content"
             android:text="Cancel"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_25" />
+            android:textSize="@dimen/d_16" />
 
         <TextView
             android:id="@+id/tv_ok_edit_change_tb005"
@@ -196,7 +190,7 @@
             android:layout_marginRight="@dimen/d_10"
             android:text="OK"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_25" />
+            android:textSize="@dimen/d_16" />
     </TableRow>
 
 </LinearLayout>

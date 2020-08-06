@@ -33,7 +33,7 @@ public class M001LoginPresenter extends BasePresenter<OnM001LoginCallbackToView>
                 @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    mListener.showToast("Login successfully: " + fAuth.getCurrentUser().getUid());
+                    mListener.showToast("Login successfully");
                     M001LoginPresenter.this.getStorage().setCurrentUId(fAuth.getCurrentUser().getUid());
                     if (isChecked) {
                         CommonUtils.getInstance().saveAccount(email, password,codeAdmin);

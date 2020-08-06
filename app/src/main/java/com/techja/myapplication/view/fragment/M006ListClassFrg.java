@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,8 +47,8 @@ public class M006ListClassFrg extends BaseFragment<M006ListClassPresenter, OnM00
         rvClass = rootView.findViewById(R.id.rv_class_006);
         mPresenter.getListClass();
         ivBack = findViewById(R.id.iv_back_006, this);
-        rvClass.setLayoutManager(new LinearLayoutManager(mContext));
-
+        rvClass.setLayoutManager(new GridLayoutManager(mContext,1));
+        findViewById(R.id.iv_back, this);
     }
 
     private void initData() {
@@ -63,6 +64,8 @@ public class M006ListClassFrg extends BaseFragment<M006ListClassPresenter, OnM00
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.iv_back_006) {
+            mCallBack.showFragment(M003MenuFrg.TAG);
+        }else if(v.getId()==R.id.iv_back){
             mCallBack.showFragment(M003MenuFrg.TAG);
         }
     }

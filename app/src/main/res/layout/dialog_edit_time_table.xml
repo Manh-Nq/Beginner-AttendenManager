@@ -3,7 +3,6 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/colorGreenAlpha"
     android:orientation="vertical"
     android:padding="@dimen/d_16">
 
@@ -27,18 +26,17 @@
             android:gravity="center"
             android:text="Day"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+            android:textSize="@dimen/d_20" />
 
         <EditText
             android:id="@+id/edt_day_dialog_005"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:maxLines="1"
             android:gravity="center"
             android:hint="định dạng Monday->Mon"
-            android:textColor="@color/colorBlack"
+            android:maxLines="1"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
             <requestFocus />
@@ -60,17 +58,16 @@
             android:gravity="center"
             android:text="time"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+            android:textSize="@dimen/d_20" />
 
         <EditText
-            android:maxLines="1"
             android:id="@+id/edt_time_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:hint="định dạng h:mm"
-            android:textColor="@color/colorBlack"
+            android:maxLines="1"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
         </EditText>
@@ -90,16 +87,16 @@
             android:text="Detail"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+           />
 
         <EditText
-            android:maxLines="1"
             android:id="@+id/edt_detail_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:hint="nhập nội dung buổi học "
-            android:textColor="@color/colorBlack"
+            android:maxLines="1"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
         </EditText>
@@ -119,16 +116,16 @@
             android:text="Coach"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+             />
 
         <EditText
-            android:maxLines="1"
             android:id="@+id/edt_coach_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:hint="nhập tên giảng viên"
-            android:textColor="@color/colorBlack"
+            android:maxLines="1"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
         </EditText>
@@ -148,16 +145,16 @@
             android:text="Note"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_20"
-            android:textStyle="bold" />
+       />
 
         <EditText
-            android:maxLines="1"
             android:id="@+id/edt_note_dialog_005"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:hint="Ghi chú"
-            android:textColor="@color/colorBlack"
+            android:maxLines="1"
+            android:textColor="@color/colorblack"
             android:textSize="@dimen/d_16">
 
         </EditText>

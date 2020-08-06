@@ -39,9 +39,8 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableHolder>
         holder.tvTime.setText(entity.getTime());
         holder.tvDetail.setText(entity.getDetail());
         holder.tvTeacher.setText(entity.getTeacher());
-        holder.tvNote.setText(entity.getNote());
 
-        holder.tvNote.setTag(entity);
+        holder.tvDay.setTag(entity);
 
     }
 
@@ -61,13 +60,12 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableHolder>
             tvTime = itemView.findViewById(R.id.tv_time);
             tvDetail = itemView.findViewById(R.id.tv_detail);
             tvTeacher = itemView.findViewById(R.id.tv_teacher);
-            tvNote = itemView.findViewById(R.id.tv_note);
+
 
             tvDay.setTypeface(App.getInstance().getRegularFont());
             tvTime.setTypeface(App.getInstance().getRegularFont());
             tvDetail.setTypeface(App.getInstance().getRegularFont());
             tvTeacher.setTypeface(App.getInstance().getRegularFont());
-            tvNote.setTypeface(App.getInstance().getRegularFont());
 
             itemView.findViewById(R.id.iv_edit).setOnClickListener(this);
         }
@@ -75,7 +73,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableHolder>
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.iv_edit) {
-                callBack.editTable((TimeTableEntity) tvNote.getTag());
+                callBack.editTable((TimeTableEntity) tvDay.getTag());
             }
         }
     }

@@ -43,14 +43,16 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
     @Override
     protected int getLayoutId() {
-        return R.layout.m007_frg_list_tudent;
+        return R.layout.m007_frg_list_student;
     }
 
 
     @Override
     protected void initViews() {
+
         progressBar = findViewById(R.id.progress_bar_007);
         lnFrg = findViewById(R.id.ln_frg_007);
+        findViewById(R.id.iv_back,this);
         rvStudent = findViewById(R.id.rv_class_007);
         mPresenter.getUserInfoStudent();
         listTmp = getStorage().getListStudent();
@@ -59,6 +61,12 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.iv_back){
+            mCallBack.showFragment(M006ListClassFrg.TAG);
+        }
+    }
 
     private void initData(List<StudentEntity> listTmp) {
         String classCode = getStorage().getClassCode();

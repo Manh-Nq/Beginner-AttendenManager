@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/d_50"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/d_10"
+            android:padding="@dimen/d_10"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Techja"
+            android:textColor="@color/colorblack"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TableRow
+        android:layout_marginTop="@dimen/d_20"
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginRight="@dimen/d_16"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d40">
+
+
+        <TextView
+            android:id="@+id/tv_day_dialog"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_day"
+            android:gravity="center"
+            android:text="Day"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/d_30" />
+
+        <TextView
+            android:id="@+id/tv_time_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/d_20"
+            android:textColor="@color/colorViolet"
+            android:textSize="@dimen/d_20" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginRight="@dimen/d_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="Teacher:"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_14" />
+
+        <TextView
+            android:id="@+id/tv_coach_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_14" />
+        />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorVioletAlpha"
+        android:layout_height="0.1dp" />
+
+    <TableRow
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginRight="@dimen/d_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="Lesson"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tv_detail_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/d_14" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorVioletAlpha"
+        android:layout_height="0.1dp" />
+
+    <TableRow
+        android:layout_marginLeft="@dimen/d_16"
+        android:layout_marginRight="@dimen/d_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="Note:"
+            android:textColor="@color/colorBlack" />
+
+
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:id="@+id/tv_note_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/d_14"
+            android:textColor="@color/colorBlack"
+            android:gravity="center_vertical"
+            app:colorClickableText="@color/colorBlue"
+            app:trimCollapsedText="xem thêm"
+            app:trimMode="trimModeLine"
+            android:layout_marginBottom="@dimen/d_20"
+             />
+
+
+    </TableRow>
+
+
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

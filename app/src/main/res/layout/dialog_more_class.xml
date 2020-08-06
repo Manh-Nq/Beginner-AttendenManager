@@ -10,7 +10,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerInParent="true"
-        android:backgroundTint="@color/colorblue"
+        android:backgroundTint="@color/colorBlue"
         android:visibility="gone" />
 
     <LinearLayout
@@ -18,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:background="@color/colorGreenAlpha"
         android:orientation="vertical"
         android:padding="@dimen/d_16">
 
