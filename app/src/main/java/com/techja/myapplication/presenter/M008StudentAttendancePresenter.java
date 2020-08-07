@@ -8,7 +8,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.techja.myapplication.callback.OnM008AttendanceCallbackToView;
+import com.techja.myapplication.model.ItemDayEntity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class M008StudentAttendancePresenter extends BasePresenter<OnM008AttendanceCallbackToView> {
@@ -25,12 +28,13 @@ public class M008StudentAttendancePresenter extends BasePresenter<OnM008Attendan
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
+                            List<ItemDayEntity>listData = new ArrayList<>();
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Map<String, Object> data = document.getData();
-                                    mListener.addAttendanceToView((String) data.get("day"), (String) data.get("time"), (String) data.get("state"));
+                                    listData.add(new ItemDayEntity((String) data.get("day"), (String) data.get("time"), (String) data.get("state")));
                                 }
+                                mListener.addAttendanceToView(listData);
                             }
                             mListener.showProgressBar(false);
                         }

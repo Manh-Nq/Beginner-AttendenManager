@@ -25,7 +25,7 @@ public class CommonUtils {
     private static final String KEY_EMAIL = "KEY_USER_NAME";
     private static final String KEY_PASSWORD = "KEY_PASSWORD";
     private static final String KEY_ADMIN = "KEY_ADMIN";
-    private List<StudentEntity> tmp = new ArrayList<>();
+    private List<StudentEntity> listRs = new ArrayList<>();
     private static final Object[][] PHONE_NUMBER = new Object[][]{
             new Object[]{"090", 10}, new Object[]{"093", 10}, new Object[]{"070", 10},
             new Object[]{"071", 10}, new Object[]{"072", 10}, new Object[]{"076", 10},
@@ -123,5 +123,18 @@ public class CommonUtils {
     }
 
 
+    public boolean isCheckSeahch(String text, List<StudentEntity> tmp) {
+        listRs = new ArrayList<>();
+        for (int i = 0; i < tmp.size(); i++) {
+            if (tmp.get(i).toString().contains(text)) {
+                listRs.add(tmp.get(i));
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public List<StudentEntity> getListRs() {
+        return listRs;
+    }
 }

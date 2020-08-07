@@ -24,6 +24,7 @@ import com.techja.myapplication.view.event.OnM005MoreTimeTableCallBackToParent;
 import com.techja.myapplication.view.event.OnM005TimetableCallBack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM005TimetableCallBack>
@@ -59,7 +60,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         mPresenter.getClassTimetable(this.classCode);
         rvTimetable = findViewById(R.id.rv_time_table);
 
-        findViewById(R.id.iv_back,this);
+        findViewById(R.id.iv_back, this);
         btEditTable = findViewById(R.id.bt_more_table, this);
         btMoreCoach = findViewById(R.id.bt_more_coach, this);
 
@@ -86,7 +87,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
             case R.id.bt_more_coach:
                 showDialogMoreCoach();
                 break;
-                case R.id.iv_back:
+            case R.id.iv_back:
                 mCallBack.showFragment(M004ClassFrg.TAG);
                 break;
         }
@@ -103,7 +104,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
     private void showDialogMoretimeTable() {
         getStorage().setClassCode(this.classCode);
         M005DialogMoreTimeTable dialog = new M005DialogMoreTimeTable(mContext, classCode);
-dialog.setOnCallBack(this);
+        dialog.setOnCallBack(this);
         dialog.show();
     }
 
@@ -128,6 +129,7 @@ dialog.setOnCallBack(this);
     private void initData(List<TimeTableEntity> listData) {
         if (listData.size() < 0) return;
         this.listData = listData;
+        Collections.sort(listData,TimeTableEntity::compareTo);
         adapter = new TableAdapter(mContext, listData);
         adapter.setClickItemTimeTableListener(this);
         rvTimetable.setAdapter(adapter);
@@ -141,6 +143,12 @@ dialog.setOnCallBack(this);
         M005dialogEditTimeTable dialog = new M005dialogEditTimeTable(mContext);
         dialog.setOnCallBack(this);
         dialog.show();
+    }
+
+    @Override
+    public void showM009TKB(TimeTableEntity data) {
+        getStorage().setTimeTableEntity(data);
+        mCallBack.showFragment(M009ShowTBFrg.TAG);
     }
 
     @Override

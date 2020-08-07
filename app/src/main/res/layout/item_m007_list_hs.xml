@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/d_44"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="4"
+        >
 
         <TextView
             android:layout_width="100dp"
@@ -22,14 +23,17 @@
 
         <TextView
             android:id="@+id/tv_name_hs_007"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="3"
             android:background="@color/colorWhite"
             android:gravity="center_vertical"
             android:text="Ngô Mạnh "
             android:textColor="@color/colorBlue"
 
             android:textSize="@dimen/d_16" />
+
+
 
     </TableRow>
 
@@ -104,7 +108,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="@dimen/d_44"
-android:gravity="center"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -119,25 +123,40 @@ android:gravity="center"
                 android:textSize="@dimen/d_14" />
 
             <View
-                android:layout_marginTop="@dimen/d_5"
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
+                android:layout_marginTop="@dimen/d_5"
                 android:background="@color/colorBlue" />
         </LinearLayout>
 
         <ImageView
+            android:layout_marginLeft="@dimen/d_10"
             android:id="@+id/iv_phone_007"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/colorWhite"
             android:src="@drawable/ic_phone" />
+
     </TableRow>
-    <View
+    <TextView
         android:layout_marginTop="@dimen/d_10"
-        android:layout_marginLeft="@dimen/d_10"
-        android:layout_marginRight="@dimen/d_10"
+        android:id="@+id/tv_chitiet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorBlue"
+        android:textSize="@dimen/d_12"
+        android:text="xem thêm"
+        android:gravity="left|center_vertical"
+        android:textStyle="italic" />
+
+    <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
+        android:layout_marginLeft="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_10"
+        android:layout_marginRight="@dimen/d_10"
         android:background="@color/colorViolet" />
 
 

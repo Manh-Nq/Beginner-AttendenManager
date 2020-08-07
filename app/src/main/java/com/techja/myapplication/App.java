@@ -11,6 +11,7 @@ public class App extends Application {
     private Typeface mBoldFont;
     private Typeface mRegularFont;
     private Typeface mMediumFont;
+    private Typeface mItalicFont;
 
     @Override
     public void onCreate() {
@@ -20,7 +21,7 @@ public class App extends Application {
         mRegularFont = Typeface.createFromAsset(getAssets(), "font/fontRegular.ttf");
         mMediumFont = Typeface.createFromAsset(getAssets(), "font/fontMedium.ttf");
         mBoldFont = Typeface.createFromAsset(getAssets(), "font/fontBold.ttf");
-
+        mItalicFont = Typeface.createFromAsset(getAssets(), "font/fontItalic.ttf");
     }
 
     public static StorageCommon getStorage() {
@@ -35,6 +36,14 @@ public class App extends Application {
         return mBoldFont;
     }
 
+
+    public Typeface getmMediumFont() {
+        return mMediumFont;
+    }
+
+    public Typeface getmItalicFont() {
+        return mItalicFont;
+    }
 
     public static App getInstance() {
         return instance;

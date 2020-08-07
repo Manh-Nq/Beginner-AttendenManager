@@ -14,12 +14,13 @@
 
     <LinearLayout
 
-        xmlns:tools="http://schemas.android.com/tools"
+
         android:id="@+id/ln_frg_007"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorWhite"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -45,12 +46,43 @@
 
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/edt_seach"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d_30"
+                android:layout_marginHorizontal="@dimen/d_16"
+                android:background="@drawable/bg_focus_edt_1"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="center"
+                android:hint="seach" />
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:visibility="gone"
+                android:layout_width="@dimen/d_30"
+                android:layout_height="@dimen/d_30"
+                android:layout_alignRight="@id/edt_seach"
+                android:src="@drawable/ic_delete" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginHorizontal="@dimen/d_16"
+            android:background="@color/colorViolet" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="@dimen/d_16"
             android:layout_marginLeft="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_16"
             android:gravity="center"
             android:text="Danh sách học viên"
             android:textColor="@color/colorBlack"

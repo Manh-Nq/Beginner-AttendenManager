@@ -2,7 +2,10 @@ package com.techja.myapplication.model;
 
 import androidx.annotation.Nullable;
 
-public class TimeTableEntity {
+import java.util.Arrays;
+
+public class TimeTableEntity implements Comparable<TimeTableEntity> {
+    private static final String[] ARRDAY = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
     private String day, time, detail, teacher, note;
 
     public TimeTableEntity(String day, String time, String detail, String teacher, String note) {
@@ -62,6 +65,19 @@ public class TimeTableEntity {
                     && item.time.equals(time) && item.note.equals(note);
         }
         return super.equals(obj);
+    }
+
+    @Override
+    public int compareTo(TimeTableEntity o) {
+        if (o == null || day == null) return 0;
+        if (day.equals(o.getDay())) {
+            if (time.length() != o.getTime().length()) return time.length() - o.getTime().length();
+            return time.compareTo(o.getTime());
+        }
+        int index1 = Arrays.asList(ARRDAY).indexOf(day);
+        int index2 = Arrays.asList(ARRDAY).indexOf(o.getDay());
+
+        return index1 - index2;
     }
 
 }

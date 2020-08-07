@@ -15,8 +15,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+
             android:background="@color/colorWhite"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:text="Monday"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/d_14" />
@@ -41,7 +42,7 @@
             android:background="@color/colorWhite"
             android:gravity="center"
             android:text="17:30"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorBlue"
             android:textSize="@dimen/d_14" />
 
         <View

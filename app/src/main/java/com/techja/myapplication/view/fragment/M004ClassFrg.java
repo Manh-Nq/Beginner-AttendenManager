@@ -71,7 +71,8 @@ public class M004ClassFrg extends BaseFragment<M004ClassPresenter, OnM004ClassCa
     private void initData(List<ClassEntity> listData) {
 
         this.listData = listData;
-        Log.d(TAG, "initViews: " + this.listData.size());
+//        this.listData.add(new ClassEntity("hello", "dsdsd"));
+        Log.d(TAG, "initViews: " + this.listData.toString());
         adapter = new ClassAdapter(this.listData, mContext);
         adapter.setCallBackItem(this);
         rvClass.setAdapter(adapter);

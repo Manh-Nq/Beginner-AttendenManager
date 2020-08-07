@@ -39,14 +39,10 @@
 
     </RelativeLayout>
 
-    <ScrollView
-        android:layout_below="@id/rvpr1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
         <LinearLayout
-
+            android:layout_below="@id/rvpr1"
             android:id="@+id/ln_frg_006"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -77,30 +73,19 @@
             </LinearLayout>
 
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/d_16"
-                android:layout_marginRight="@dimen/d_16"
-                android:layout_marginBottom="16dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_class_006"
+                        android:layout_marginTop="@dimen/d_10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         tools:listitem="@layout/item_class_006" />
 
-                </LinearLayout>
 
-            </ScrollView>
 
 
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

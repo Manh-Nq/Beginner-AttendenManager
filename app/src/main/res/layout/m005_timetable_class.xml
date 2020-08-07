@@ -68,12 +68,9 @@
                     android:textSize="@dimen/d_20" />
 
 
-                <ScrollView
-                    android:layout_marginTop="@dimen/d_10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="@dimen/d_10"
                         android:id="@+id/rv_time_table"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -83,7 +80,6 @@
 
 
                     </androidx.recyclerview.widget.RecyclerView>
-                </ScrollView>
 
                 <TableRow
                     android:layout_width="match_parent"

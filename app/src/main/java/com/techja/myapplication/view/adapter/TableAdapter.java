@@ -68,12 +68,15 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableHolder>
             tvTeacher.setTypeface(App.getInstance().getRegularFont());
 
             itemView.findViewById(R.id.iv_edit).setOnClickListener(this);
+            itemView.findViewById(R.id.ln_item_time).setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.iv_edit) {
                 callBack.editTable((TimeTableEntity) tvDay.getTag());
+            }else if(v.getId()==R.id.ln_item_time){
+                callBack.showM009TKB((TimeTableEntity) tvDay.getTag());
             }
         }
     }
@@ -86,5 +89,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableHolder>
 
     public interface clickItemTimeTableListener {
         void editTable(TimeTableEntity data);
+        void showM009TKB(TimeTableEntity data);
     }
 }

@@ -6,12 +6,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM007ListStudentCallBackToView;
 import com.techja.myapplication.model.StudentEntity;
@@ -35,6 +37,8 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     private List<StudentEntity> tmp;
     private LinearLayout lnFrg;
     private ProgressBar progressBar;
+    private EditText edtSeach;
+    private ImageView ivDelete;
 
     @Override
     protected M007ListStudentPresenter getPresenter() {
@@ -50,38 +54,79 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
     @Override
     protected void initViews() {
 
+        edtSeach = findViewById(R.id.edt_seach, App.getInstance().getRegularFont());
+        listTmp = getStorage().getListStudent();
+
         progressBar = findViewById(R.id.progress_bar_007);
         lnFrg = findViewById(R.id.ln_frg_007);
-        findViewById(R.id.iv_back,this);
+        findViewById(R.id.iv_back, this);
         rvStudent = findViewById(R.id.rv_class_007);
         mPresenter.getUserInfoStudent();
-        listTmp = getStorage().getListStudent();
+        ivDelete = findViewById(R.id.iv_delete, this);
+
         rvStudent.setLayoutManager(new LinearLayoutManager(mContext));
-        this.tmp = listTmp;
+        seachStudent();
 
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.iv_back){
+        if (v.getId() == R.id.iv_back) {
             mCallBack.showFragment(M006ListClassFrg.TAG);
+        } else if (v.getId() == R.id.iv_delete) {
+            edtSeach.setText("");
         }
+    }
+
+
+    private void seachStudent() {
+        edtSeach.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (textOf(edtSeach).length() > 0) {
+                    ivDelete.setVisibility(View.VISIBLE);
+                }else {
+                    ivDelete.setVisibility(View.GONE);
+                }
+                if (textOf(edtSeach).isEmpty()) {
+                    tmp = listTmp;
+                } else if (CommonUtils.getInstance().isCheckSeahch(textOf(edtSeach), listTmp)) {
+                    tmp = CommonUtils.getInstance().getListRs();
+                }
+                initData(tmp);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     private void initData(List<StudentEntity> listTmp) {
         String classCode = getStorage().getClassCode();
-        if (listTmp.size() < 0) {
-            return;
-        }
-        listData = new ArrayList<>();
-        for (int i = 0; i < listTmp.size(); i++) {
-            if (listTmp.get(i).getClassName().equals(classCode)) {
-                listData.add(new StudentEntity(listTmp.get(i).getName(), listTmp.get(i).getClassName(), listTmp.get(i).getEmail(), listTmp.get(i).getPhone()));
+        try {
+            listData = new ArrayList<>();
+            if (listTmp.size() < 0) {
+                return;
             }
+            for (int i = 0; i < listTmp.size(); i++) {
+                if (listTmp.get(i).getClassName().equals(classCode)) {
+                    listData.add(new StudentEntity(listTmp.get(i).getName(), listTmp.get(i).getClassName(), listTmp.get(i).getEmail(), listTmp.get(i).getPhone()));
+                }
+            }
+            adapter = new StudentAdapter(listData, mContext);
+            adapter.setClickItemStudentListener(this);
+            rvStudent.setAdapter(adapter);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        adapter = new StudentAdapter(listData, mContext);
-        adapter.setClickItemStudentListener(this);
-        rvStudent.setAdapter(adapter);
+
 
     }
 

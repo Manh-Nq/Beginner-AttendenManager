@@ -17,6 +17,7 @@ import com.techja.myapplication.view.event.OnM005TimetableCallBack;
 import com.techja.myapplication.view.event.OnM006ListClassCallback;
 import com.techja.myapplication.view.event.OnM007ListStudentCallBack;
 import com.techja.myapplication.view.event.OnM008StudentAttendanceCallback;
+import com.techja.myapplication.view.event.OnM009ShowTBCallBack;
 import com.techja.myapplication.view.fragment.M000SplashFrg;
 import com.techja.myapplication.view.fragment.M001LoginFrg;
 
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements OnMainCallBackToView,
         OnM000SpashCallback, OnM001LoginCallback, OnM002ProifleCompanyCallBack, OnM003MenuCallBack, OnM004ClassCallBack,
-        OnM005TimetableCallBack, OnM006ListClassCallback, OnM007ListStudentCallBack, OnM008StudentAttendanceCallback {
+        OnM005TimetableCallBack, OnM006ListClassCallback, OnM007ListStudentCallBack, OnM008StudentAttendanceCallback, OnM009ShowTBCallBack {
 
     public static final int REQUEST_CODE = 1996;
 

@@ -51,7 +51,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
 
     public class StudentHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvName, tvClassName, tvEmail, tvPhone;
-        ImageView ivPhone;
+
 
         public StudentHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,22 +59,20 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
             tvClassName = itemView.findViewById(R.id.tv_class_name_007);
             tvEmail = itemView.findViewById(R.id.tv_email_007);
             tvPhone = itemView.findViewById(R.id.tv_phone_007);
-            ivPhone = itemView.findViewById(R.id.iv_phone_007);
+             itemView.findViewById(R.id.iv_phone_007).setOnClickListener(this);
 
             tvName.setTypeface(App.getInstance().getRegularFont());
             tvClassName.setTypeface(App.getInstance().getRegularFont());
             tvEmail.setTypeface(App.getInstance().getRegularFont());
             tvPhone.setTypeface(App.getInstance().getRegularFont());
 
-            ivPhone.setOnClickListener(this);
-            tvName.setOnClickListener(this);
-            tvEmail.setOnClickListener(this);
-            tvClassName.setOnClickListener(this);
+            itemView.findViewById(R.id.tv_chitiet).setOnClickListener(this);
+
         }
 
         @Override
         public void onClick(View v) {
-            if (v.getId() == R.id.tv_name_hs_007 || v.getId() == R.id.tv_email_007 || v.getId() == R.id.tv_class_name_007) {
+            if (v.getId() == R.id.tv_chitiet) {
                 callBack.showHistoryAttendanceStudent((StudentEntity) tvEmail.getTag());
             } else if (v.getId() == R.id.iv_phone_007) {
                 callBack.callPhoneForStudent((StudentEntity) tvEmail.getTag());

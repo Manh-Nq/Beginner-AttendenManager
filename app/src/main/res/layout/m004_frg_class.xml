@@ -13,12 +13,10 @@
         android:layout_centerInParent="true"
         android:backgroundTint="@color/colorGreen"
         android:visibility="visible" />
-<ScrollView
-    android:layout_below="@id/rvpr"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
 
     <LinearLayout
+        android:layout_below="@id/rvpr"
         android:id="@+id/ln_m004_frg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,12 +50,10 @@
         </TableRow>
 
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/d_16"
-            android:layout_marginRight="@dimen/d_16"
-            android:layout_marginBottom="16dp">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,12 +79,8 @@
 
             </LinearLayout>
 
-
-        </ScrollView>
-
-
-    </LinearLayout>
 </ScrollView>
+    </LinearLayout>
     <RelativeLayout
         android:id="@+id/rvpr"
         android:layout_width="match_parent"

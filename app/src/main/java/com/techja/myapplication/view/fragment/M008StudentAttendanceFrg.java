@@ -7,18 +7,22 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.techja.myapplication.App;
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM008AttendanceCallbackToView;
+import com.techja.myapplication.model.ItemDayEntity;
 import com.techja.myapplication.presenter.M008StudentAttendancePresenter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.event.OnM008StudentAttendanceCallback;
+
+import java.util.List;
 
 public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendancePresenter, OnM008StudentAttendanceCallback> implements OnM008AttendanceCallbackToView {
     public static final String TAG = M008StudentAttendanceFrg.class.getName();
     private LinearLayout lnHistory;
     private ProgressBar progressBar;
     private LinearLayout lnFrg;
-
+    private TextView tvToTalLate, tvTotalOT, tvToTal, tvCb;
     @Override
     protected M008StudentAttendancePresenter getPresenter() {
         return new M008StudentAttendancePresenter(this);
@@ -34,6 +38,12 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
         progressBar = findViewById(R.id.progress_008);
         lnFrg = findViewById(R.id.ln_frg_008);
         findViewById(R.id.iv_back,this);
+
+        tvToTalLate = findViewById(R.id.tv_total_late);
+        tvToTal = findViewById(R.id.tv_total);
+        tvTotalOT = findViewById(R.id.tv_total_ot);
+        tvCb = findViewById(R.id.tv_canhbao, App.getInstance().getmItalicFont());
+
         try {
             String classCode = getStorage().getStudentEntity().getClassName();
             String email = getStorage().getStudentEntity().getEmail();
@@ -53,30 +63,50 @@ public class M008StudentAttendanceFrg extends BaseFragment<M008StudentAttendance
     }
 
     @Override
-    public void addAttendanceToView(String day, String time, String state) {
+    public void addAttendanceToView(List<ItemDayEntity>listData) {
         try {
+            int totalLate = 0;
+            for (int i = 0; i < listData.size(); i++) {
+                View itemView = LayoutInflater.from(mContext)
+                        .inflate(R.layout.item_attendance, null);
+                TextView tvDay = itemView.findViewById(R.id.tv_day);
+                TextView tvToDay = itemView.findViewById(R.id.tv_today);
+                TextView tvTime = itemView.findViewById(R.id.tv_time);
+                TextView tvState = itemView.findViewById(R.id.tv_state);
+                ItemDayEntity entity = listData.get(i);
 
-            View itemView = LayoutInflater.from(mContext)
-                    .inflate(R.layout.item_attendance, null);
-            TextView tvDay = itemView.findViewById(R.id.tv_day);
-            TextView tvTime = itemView.findViewById(R.id.tv_time);
-            TextView tvToDay = itemView.findViewById(R.id.tv_today);
-            TextView tvState = itemView.findViewById(R.id.tv_state);
+                tvDay.setTypeface(App.getInstance().getRegularFont());
+                tvTime.setTypeface(App.getInstance().getRegularFont());
+                tvState.setTypeface(App.getInstance().getmMediumFont());
+                tvDay.setText(entity.getDay().substring(0, entity.getDay().indexOf("/")));
+                tvToDay.setText(entity.getDay().substring(entity.getDay().indexOf("/") + 1, entity.getDay().length()));
+                tvTime.setText(entity.getTime());
+                tvState.setText(entity.getState());
+                if (entity.getState().equals("late")) {
+                    tvState.setBackgroundResource(R.drawable.bg_time_history_late);
+                    tvTime.setTextColor(getResources().getColor(R.color.colorred));
+                    totalLate++;
+                } else {
+                    tvState.setBackgroundResource(R.drawable.bg_time_history_ontime);
+                    tvState.setTextColor(getResources().getColor(R.color.colorViolet));
+                    tvTime.setTextColor(getResources().getColor(R.color.colorBlue));
+                }
 
-            tvDay.setText(day.substring(0, day.indexOf("/")));
-            tvToDay.setText(day.substring(day.indexOf("/")+1,day.length()));
-            tvTime.setText(time);
-            tvState.setText(state);
-            if (state.equals("late")) {
-                tvState.setBackgroundColor(getResources().getColor(R.color.colorRed));
-            } else {
-                tvState.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+
+                lnHistory.addView(itemView);
             }
 
-            lnHistory.addView(itemView);
+            tvToTalLate.setText("Total late:  " + totalLate);
+            tvTotalOT.setText("Total ontime: " + (listData.size() - totalLate));
+            tvToTal.setText("Total: " + listData.size());
+            if (totalLate>5) {
+                tvCb.setVisibility(View.VISIBLE);
+            }
+
         } catch (Exception e) {
 
         }
+
     }
 
     @Override

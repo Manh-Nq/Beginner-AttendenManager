@@ -43,7 +43,55 @@
 
 
         </RelativeLayout>
+        <TableRow
+            android:layout_marginTop="@dimen/d_16"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d40"
+            android:weightSum="3">
 
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_total_late"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d_16"
+                android:layout_weight="1"
+                android:text="Total late: 0"
+                android:textColor="@color/colorRed" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_total_ot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d_30"
+                android:layout_weight="1"
+                android:text="Total ontime: 0"
+                android:textColor="@color/colorGreen" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d_30"
+                android:layout_weight="1"
+                android:text="Total: 0"
+                android:textColor="@color/colorBlue" />
+        </TableRow>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_canhbao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_20"
+            android:text="Cảnh báo:bạn đã đi muộn quá số ngày quy định!!"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/d_12"
+            android:textStyle="italic" />
 
 
 
@@ -57,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/d_16"
                 android:orientation="vertical">
+
 
                 <include layout="@layout/item_attendance" />
 
