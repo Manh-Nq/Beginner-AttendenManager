@@ -26,6 +26,7 @@ public class CommonUtils {
     private static final String KEY_PASSWORD = "KEY_PASSWORD";
     private static final String KEY_ADMIN = "KEY_ADMIN";
     private List<StudentEntity> listRs = new ArrayList<>();
+
     private static final Object[][] PHONE_NUMBER = new Object[][]{
             new Object[]{"090", 10}, new Object[]{"093", 10}, new Object[]{"070", 10},
             new Object[]{"071", 10}, new Object[]{"072", 10}, new Object[]{"076", 10},
@@ -81,6 +82,7 @@ public class CommonUtils {
     public String getDateNow(String dateFormat) {
         SimpleDateFormat df = new SimpleDateFormat(dateFormat, Locale.US);
         return df.format(new Date());
+
     }
 
     public static boolean isPhone(String phone) {
@@ -100,7 +102,6 @@ public class CommonUtils {
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_PASSWORD, password);
         editor.putString(KEY_ADMIN, codeAdmin);
-
         editor.apply();
         Log.d("TAG", "saveAccount: " + email + password);
     }
@@ -123,15 +124,14 @@ public class CommonUtils {
     }
 
 
-    public boolean isCheckSeahch(String text, List<StudentEntity> tmp) {
+    public List<StudentEntity> isCheckSeach(String text, List<StudentEntity> tmp) {
         listRs = new ArrayList<>();
         for (int i = 0; i < tmp.size(); i++) {
-            if (tmp.get(i).toString().contains(text)) {
+            if (tmp.get(i).toString().toLowerCase().contains(text.toLowerCase())) {
                 listRs.add(tmp.get(i));
-                return true;
             }
         }
-        return false;
+        return listRs;
     }
 
     public List<StudentEntity> getListRs() {

@@ -91,4 +91,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
 
         void callPhoneForStudent(StudentEntity entity);
     }
+
+    public void setListData(List<StudentEntity> listData) {
+        this.listData = listData;
+    }
 }

@@ -1,5 +1,6 @@
 package com.techja.myapplication.view.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnM005TimetableCallBackToView;
 import com.techja.myapplication.model.TimeTableEntity;
 import com.techja.myapplication.presenter.M005TimeTablePresenter;
+import com.techja.myapplication.view.activity.MainActivity;
 import com.techja.myapplication.view.adapter.TableAdapter;
 import com.techja.myapplication.view.base.BaseFragment;
 import com.techja.myapplication.view.dialog.M005DialogMoreCoach;
@@ -133,6 +135,7 @@ public class M005TimeTableFrg extends BaseFragment<M005TimeTablePresenter, OnM00
         adapter = new TableAdapter(mContext, listData);
         adapter.setClickItemTimeTableListener(this);
         rvTimetable.setAdapter(adapter);
+
     }
 
 

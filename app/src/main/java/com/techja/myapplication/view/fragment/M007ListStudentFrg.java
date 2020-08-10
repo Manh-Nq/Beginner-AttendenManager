@@ -88,17 +88,20 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                //
                 if (textOf(edtSeach).length() > 0) {
                     ivDelete.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     ivDelete.setVisibility(View.GONE);
                 }
                 if (textOf(edtSeach).isEmpty()) {
                     tmp = listTmp;
-                } else if (CommonUtils.getInstance().isCheckSeahch(textOf(edtSeach), listTmp)) {
+                } else if (CommonUtils.getInstance().isCheckSeach(textOf(edtSeach), listTmp) != null) {
                     tmp = CommonUtils.getInstance().getListRs();
                 }
-                initData(tmp);
+                adapter.setListData(tmp);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
