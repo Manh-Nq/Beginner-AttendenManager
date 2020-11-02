@@ -2,6 +2,11 @@ package com.techja.myapplication.view.activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.view.LayoutInflater;
+import android.view.View;
+
+import androidx.annotation.RequiresApi;
 
 import com.techja.myapplication.R;
 import com.techja.myapplication.callback.OnMainCallBackToView;
@@ -19,7 +24,6 @@ import com.techja.myapplication.view.event.OnM007ListStudentCallBack;
 import com.techja.myapplication.view.event.OnM008StudentAttendanceCallback;
 import com.techja.myapplication.view.event.OnM009ShowTBCallBack;
 import com.techja.myapplication.view.fragment.M000SplashFrg;
-import com.techja.myapplication.view.fragment.M001LoginFrg;
 
 import java.util.List;
 
@@ -35,12 +39,14 @@ public class MainActivity extends BaseActivity<MainPresenter> implements OnMainC
         return new MainPresenter(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void initViews() {
-        if(checkSelfPermission(Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED ||
-                checkSelfPermission(Manifest.permission.INTERNET)!= PackageManager.PERMISSION_GRANTED){
+
+        if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
+                checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CALL_PHONE
-                    ,Manifest.permission.INTERNET},REQUEST_CODE);
+                    , Manifest.permission.INTERNET}, REQUEST_CODE);
 
         }
         showFragment(M000SplashFrg.TAG);

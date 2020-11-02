@@ -111,6 +111,8 @@ public class M007ListStudentFrg extends BaseFragment<M007ListStudentPresenter, O
         });
     }
 
+
+
     private void initData(List<StudentEntity> listTmp) {
         String classCode = getStorage().getClassCode();
         try {

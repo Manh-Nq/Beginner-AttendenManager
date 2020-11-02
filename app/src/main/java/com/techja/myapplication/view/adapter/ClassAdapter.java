@@ -24,6 +24,11 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         this.listData = listData;
         this.context = context;
     }
+    private adapterListener callBack;
+
+    public void setCallBackItem(adapterListener event) {
+        callBack = event;
+    }
 
     @NonNull
     @Override
@@ -76,11 +81,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
         }
     }
 
-    private adapterListener callBack;
 
-    public void setCallBackItem(adapterListener event) {
-        callBack = event;
-    }
 
     public interface adapterListener {
 
@@ -88,5 +89,9 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassHolder>
 
         void clickButtonTimetable(ClassEntity data);
 
+    }
+
+    public void setListData(List<ClassEntity> listData) {
+        this.listData = listData;
     }
 }

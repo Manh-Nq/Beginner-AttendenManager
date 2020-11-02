@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.location.LocationManager;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.LayoutInflater;
 
 import com.techja.myapplication.App;
 import com.techja.myapplication.model.StudentEntity;
@@ -80,6 +81,7 @@ public class CommonUtils {
     }
 
     public String getDateNow(String dateFormat) {
+
         SimpleDateFormat df = new SimpleDateFormat(dateFormat, Locale.US);
         return df.format(new Date());
 
@@ -112,6 +114,33 @@ public class CommonUtils {
                 sharedPreferences.getString(KEY_PASSWORD, null),
                 sharedPreferences.getString(KEY_ADMIN, null)};
         return arrData;
+    }
+
+    static String getAlphaNumericString(int n)
+    {
+
+        // chose a Character random from this String
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        // create StringBuffer size of AlphaNumericString
+        StringBuilder sb = new StringBuilder(n);
+
+        for (int i = 0; i < n; i++) {
+
+            // generate a random number between
+            // 0 to AlphaNumericString variable length
+            int index
+                    = (int)(AlphaNumericString.length()
+                    * Math.random());
+
+            // add Character one by one in end of sb
+            sb.append(AlphaNumericString
+                    .charAt(index));
+        }
+
+        return sb.toString();
     }
 
 
